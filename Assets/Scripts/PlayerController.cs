@@ -13,7 +13,8 @@ public class PlayerController : MonoBehaviour
     public float springStr;
     public float springDmp;
     //Player movement
-    Vector3 wishDir;
+    private Vector3 wishDir;
+    //private Vector3 wishDirR;
     public float MAX_SPEED;
     public float MAX_ACCEL;
     public float MAX_FRICTION;
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
         _RB = gameObject.GetComponent<Rigidbody>();
         _TF = gameObject.GetComponent<Transform>();
         wishDir = new Vector3(0, 0, 0);
+        //wishDirR = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame
@@ -36,14 +38,14 @@ public class PlayerController : MonoBehaviour
         Vector3 vel = _RB.velocity;
         //Hover ("Making A Physics Based Character Controller in Unity" by Toyful Games. YouTube)
         RaycastHit hit;
-        if(Physics.Raycast(_TF.position, _TF.TransformDirection(Vector3.down), out hit, maxDistFromGround))
+        if (Physics.Raycast(_TF.position, _TF.TransformDirection(Vector3.down), out hit, maxDistFromGround))
         {
             Debug.DrawRay(_TF.position, _TF.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
             Vector3 rayDir = _TF.TransformDirection(Vector3.down);
 
             Vector3 otherVel = Vector3.zero;
             Rigidbody hitRB = hit.rigidbody;
-            if(hitRB != null)
+            if (hitRB != null)
             {
                 otherVel = hitRB.velocity;
             }
@@ -69,15 +71,27 @@ public class PlayerController : MonoBehaviour
         //Move character
         float currentSpeed = Vector3.Dot(hvel, wishDir);
         //If wishDir is 0, apply friction
-        if (Vector3.Dot(wishDir, wishDir) == 0) 
+        /*if (Vector3.Dot(wishDir, wishDir) == 0)
         {
             Vector3 friction = Vector3.ClampMagnitude(-hvel * friction_coef, MAX_FRICTION);
             _RB.AddForce(friction, ForceMode.Acceleration);
             Debug.Log("friction = " + friction);
-        }
+        }*/
+        /*else //Otherwise apply friction perpendicular to wishDir
+        {
+            float currentDrift = Vector3.Dot(hvel, wishDirR);
+            Vector3 friction = Vector3.ClampMagnitude(-wishDirR * currentDrift * friction_coef,
+                MAX_FRICTION);
+            Debug.Log("friction = " + friction);
+            _RB.AddForce(friction, ForceMode.Acceleration);
+        }*/
         float addSpeed = Mathf.Clamp(MAX_SPEED - currentSpeed, 0f, MAX_ACCEL);
-        Debug.Log("addSpeed = " + addSpeed * wishDir);
+        //Debug.Log("addSpeed = " + addSpeed * wishDir);
         _RB.AddForce(addSpeed * wishDir, ForceMode.Acceleration);
+        Vector3 driftVel = Mathf.Abs(currentSpeed) * wishDir - hvel;
+        Vector3 friction = Vector3.ClampMagnitude(driftVel * friction_coef, MAX_FRICTION);
+        //Debug.Log("friction = " + friction);
+        _RB.AddForce(friction, ForceMode.Acceleration);
     }
 
     void OnMove(InputValue moveValue)
@@ -85,5 +99,8 @@ public class PlayerController : MonoBehaviour
         Vector2 move = moveValue.Get<Vector2>();
         wishDir.x = move.x;
         wishDir.z = move.y;
+        /*//wishDirR is wishDir rotated 90 degrees to the right
+        wishDirR.x = move.y;
+        wishDirR.z = -move.x;*/
     }
 }
