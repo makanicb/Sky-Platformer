@@ -100,6 +100,7 @@ public class PlayerController : MonoBehaviour
         Vector2 move = moveValue.Get<Vector2>();
         wishDir.x = move.x;
         wishDir.z = move.y;
+        wishDir = _TF.rotation * wishDir;
         /*//wishDirR is wishDir rotated 90 degrees to the right
         wishDirR.x = move.y;
         wishDirR.z = -move.x;*/
