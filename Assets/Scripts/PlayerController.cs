@@ -74,9 +74,10 @@ public class PlayerController : MonoBehaviour
             workingFrictionCoef = drag_coef;
         }
 
+        Vector3 wishDirT = _TF.rotation * wishDir;
         Vector3 hvel = new Vector3(vel.x, 0f, vel.z);
         //Move character
-        float currentSpeed = Vector3.Dot(hvel, wishDir);
+        float currentSpeed = Vector3.Dot(hvel, wishDirT);
         //If wishDir is 0, apply friction
         /*if (Vector3.Dot(wishDir, wishDir) == 0)
         {
@@ -94,9 +95,9 @@ public class PlayerController : MonoBehaviour
         }*/
         float addSpeed = Mathf.Clamp(MAX_SPEED - currentSpeed, 0f, MAX_ACCEL);
         //Debug.Log("addSpeed = " + addSpeed * wishDir);
-        _RB.AddForce(addSpeed * wishDir, ForceMode.Acceleration);
-        //Friction always points towards wishDir
-        Vector3 driftVel = Mathf.Abs(currentSpeed) * wishDir - hvel;
+        _RB.AddForce(addSpeed * wishDirT, ForceMode.Acceleration);
+        //Friction always points towards wishDirT
+        Vector3 driftVel = Mathf.Abs(currentSpeed) * wishDirT - hvel;
         Vector3 friction = Vector3.ClampMagnitude(driftVel * workingFrictionCoef, workingMaxFriction);
         //Debug.Log("friction = " + friction);
         _RB.AddForce(friction, ForceMode.Acceleration);
@@ -107,7 +108,6 @@ public class PlayerController : MonoBehaviour
         Vector2 move = moveValue.Get<Vector2>();
         wishDir.x = move.x;
         wishDir.z = move.y;
-        wishDir = _TF.rotation * wishDir;
         /*//wishDirR is wishDir rotated 90 degrees to the right
         wishDirR.x = move.y;
         wishDirR.z = -move.x;*/
