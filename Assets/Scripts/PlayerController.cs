@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public float MAX_ACCEL;
     public float MAX_FRICTION;
     public float friction_coef;
+    public float MAX_DRAG;
+    public float drag_coef;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        float workingMaxFriction, workingFrictionCoef;
         Vector3 vel = _RB.velocity;
         //Hover ("Making A Physics Based Character Controller in Unity" by Toyful Games. YouTube)
         RaycastHit hit;
@@ -61,10 +64,14 @@ public class PlayerController : MonoBehaviour
 
             _RB.AddForce(rayDir * springForce);
             //Debug.Log("SF: " + springForce * rayDir);
+            workingMaxFriction = MAX_FRICTION;
+            workingFrictionCoef = friction_coef;
         }
         else
         {
             Debug.DrawRay(_TF.position, _TF.TransformDirection(Vector3.down) * maxDistFromGround, Color.red);
+            workingMaxFriction = MAX_DRAG;
+            workingFrictionCoef = drag_coef;
         }
 
         Vector3 hvel = new Vector3(vel.x, 0f, vel.z);
@@ -90,7 +97,7 @@ public class PlayerController : MonoBehaviour
         _RB.AddForce(addSpeed * wishDir, ForceMode.Acceleration);
         //Friction always points towards wishDir
         Vector3 driftVel = Mathf.Abs(currentSpeed) * wishDir - hvel;
-        Vector3 friction = Vector3.ClampMagnitude(driftVel * friction_coef, MAX_FRICTION);
+        Vector3 friction = Vector3.ClampMagnitude(driftVel * workingFrictionCoef, workingMaxFriction);
         //Debug.Log("friction = " + friction);
         _RB.AddForce(friction, ForceMode.Acceleration);
     }
