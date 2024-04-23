@@ -217,7 +217,7 @@ MonoBehaviour:
   hoverHeight: 1.5
   springStr: 50
   springDmp: 10
-  MAX_SPEED: 10
+  MAX_SPEED: 15
   MAX_ACCEL: 10
   MAX_FRICTION: 20
   friction_coef: 5
