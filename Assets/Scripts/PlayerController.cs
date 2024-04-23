@@ -88,6 +88,7 @@ public class PlayerController : MonoBehaviour
         float addSpeed = Mathf.Clamp(MAX_SPEED - currentSpeed, 0f, MAX_ACCEL);
         //Debug.Log("addSpeed = " + addSpeed * wishDir);
         _RB.AddForce(addSpeed * wishDir, ForceMode.Acceleration);
+        //Friction always points towards wishDir
         Vector3 driftVel = Mathf.Abs(currentSpeed) * wishDir - hvel;
         Vector3 friction = Vector3.ClampMagnitude(driftVel * friction_coef, MAX_FRICTION);
         //Debug.Log("friction = " + friction);
