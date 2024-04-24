@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(falling);
+        //Debug.Log(falling);
         Vector3 vel = _RB.velocity;
         if(!falling && vel.y <= 0)
         {
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
                 float otherDirVel = Vector3.Dot(rayDir, otherVel);
 
                 float relVel = rayDirVel - otherDirVel;
-
+               
                 float x = hit.distance - hoverHeight;
 
                 float springForce = (x * springStr) - (relVel * springDmp);

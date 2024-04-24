@@ -32,7 +32,7 @@ public class CameraController : MonoBehaviour
         float trueDeltaAngle = trueNewAngle - currentAngle;
         _LF.Rotate(trueDeltaAngle, 0f, 0f, Space.Self);
         currentAngle += trueDeltaAngle;
-        Debug.Log(currentAngle);
+        //Debug.Log(currentAngle);
         Debug.DrawRay(_TF.position, _LF.forward * maxCameraDist);
     }
 
