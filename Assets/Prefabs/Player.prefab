@@ -223,7 +223,7 @@ MonoBehaviour:
   friction_coef: 5
   MAX_DRAG: 4
   drag_coef: 1
-  jumpStr: 5
+  jumpStr: 10
 --- !u!114 &4027754544968991956
 MonoBehaviour:
   m_ObjectHideFlags: 0
