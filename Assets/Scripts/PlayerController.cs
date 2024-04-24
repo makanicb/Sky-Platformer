@@ -14,13 +14,19 @@ public class PlayerController : MonoBehaviour
     public float springDmp;
     //Player movement
     private Vector3 wishDir;
-    //private Vector3 wishDirR;
     public float MAX_SPEED;
     public float MAX_ACCEL;
     public float MAX_FRICTION;
     public float friction_coef;
     public float MAX_DRAG;
     public float drag_coef;
+    private float workingMaxFriction;
+    private float workingFrictionCoef;
+    //Jumping
+    private bool wishJump;
+    private bool grounded;
+    public float jumpStr;
+    private bool falling;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +34,11 @@ public class PlayerController : MonoBehaviour
         _TF = gameObject.GetComponent<Transform>();
         wishDir = new Vector3(0, 0, 0);
         //wishDirR = new Vector3(0, 0, 0);
+        wishJump = false;
+        grounded = false;
+        falling = true;
+        workingMaxFriction = MAX_FRICTION;
+        workingFrictionCoef = friction_coef;
     }
 
     // Update is called once per frame
@@ -37,42 +48,61 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float workingMaxFriction, workingFrictionCoef;
+        Debug.Log(falling);
         Vector3 vel = _RB.velocity;
+        if(!falling && vel.y <= 0)
+        {
+            falling = true;
+        }
         //Hover ("Making A Physics Based Character Controller in Unity" by Toyful Games. YouTube)
         RaycastHit hit;
         if (Physics.Raycast(_TF.position, _TF.TransformDirection(Vector3.down), out hit, maxDistFromGround))
         {
             Debug.DrawRay(_TF.position, _TF.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
             Vector3 rayDir = _TF.TransformDirection(Vector3.down);
-
-            Vector3 otherVel = Vector3.zero;
-            Rigidbody hitRB = hit.rigidbody;
-            if (hitRB != null)
+            if (falling)
             {
-                otherVel = hitRB.velocity;
+                Vector3 otherVel = Vector3.zero;
+                Rigidbody hitRB = hit.rigidbody;
+                if (hitRB != null)
+                {
+                    otherVel = hitRB.velocity;
+                }
+
+                float rayDirVel = Vector3.Dot(rayDir, vel);
+                float otherDirVel = Vector3.Dot(rayDir, otherVel);
+
+                float relVel = rayDirVel - otherDirVel;
+
+                float x = hit.distance - hoverHeight;
+
+                float springForce = (x * springStr) - (relVel * springDmp);
+
+                _RB.AddForce(rayDir * springForce);
+                //Debug.Log("SF: " + springForce * rayDir);
+                workingMaxFriction = MAX_FRICTION;
+                workingFrictionCoef = friction_coef;
+                grounded = true;
             }
-
-            float rayDirVel = Vector3.Dot(rayDir, vel);
-            float otherDirVel = Vector3.Dot(rayDir, otherVel);
-
-            float relVel = rayDirVel - otherDirVel;
-
-            float x = hit.distance - hoverHeight;
-
-            float springForce = (x * springStr) - (relVel * springDmp);
-
-            _RB.AddForce(rayDir * springForce);
-            //Debug.Log("SF: " + springForce * rayDir);
-            workingMaxFriction = MAX_FRICTION;
-            workingFrictionCoef = friction_coef;
         }
         else
         {
             Debug.DrawRay(_TF.position, _TF.TransformDirection(Vector3.down) * maxDistFromGround, Color.red);
             workingMaxFriction = MAX_DRAG;
             workingFrictionCoef = drag_coef;
+            grounded = false;
         }
+
+        //Jump
+        if(grounded && wishJump)
+        {
+            _RB.AddForce(_TF.up * jumpStr, ForceMode.VelocityChange);
+            falling = false;
+            grounded = false;
+            workingMaxFriction = MAX_DRAG;
+            workingFrictionCoef = drag_coef;
+        }
+        wishJump = false;
 
         Vector3 wishDirT = _TF.rotation * wishDir;
         Vector3 hvel = new Vector3(vel.x, 0f, vel.z);
@@ -112,4 +142,10 @@ public class PlayerController : MonoBehaviour
         wishDirR.x = move.y;
         wishDirR.z = -move.x;*/
     }
+
+    void OnJump()
+    {
+        wishJump = true;
+    }
+
 }
