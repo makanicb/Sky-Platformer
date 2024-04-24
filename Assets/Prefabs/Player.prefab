@@ -215,15 +215,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDistFromGround: 3
   hoverHeight: 1.5
-  springStr: 50
-  springDmp: 10
+  springStr: 150
+  springDmp: 12
   MAX_SPEED: 15
   MAX_ACCEL: 10
   MAX_FRICTION: 20
   friction_coef: 5
   MAX_DRAG: 4
   drag_coef: 1
-  jumpStr: 10
+  jumpStr: 20
 --- !u!114 &4027754544968991956
 MonoBehaviour:
   m_ObjectHideFlags: 0
