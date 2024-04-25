@@ -29,7 +29,6 @@ public class BulletTimeController : MonoBehaviour
         this.timeScale = Mathf.Clamp(this.timeScale + shiftVel * Time.unscaledDeltaTime, slowScale, normScale);
         Time.timeScale = this.timeScale;
         Time.fixedDeltaTime = this.fixedDeltaTime * this.timeScale;
-        Debug.Log(timeScale);
     }
 
     void OnSlowTime()
