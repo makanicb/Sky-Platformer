@@ -7,11 +7,13 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody _RB;
     private Transform _TF;
+    
     //Control hover
     public float maxDistFromGround;
     public float hoverHeight;
     public float springStr;
     public float springDmp;
+    
     //Player movement
     private Vector3 wishDir;
     public float MAX_SPEED;
@@ -22,11 +24,18 @@ public class PlayerController : MonoBehaviour
     public float drag_coef;
     private float workingMaxFriction;
     private float workingFrictionCoef;
+    
     //Jumping
     private bool wishJump;
     private bool grounded;
     public float jumpStr;
     private bool falling;
+
+    // Holding Item
+    private bool holdingItem;
+    public GameObject heldItem;
+    public Rigidbody usedItem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,11 +48,26 @@ public class PlayerController : MonoBehaviour
         falling = true;
         workingMaxFriction = MAX_FRICTION;
         workingFrictionCoef = friction_coef;
+
+        // Initialize Item related things
+        holdingItem = false;
+        heldItem = GameObject.Find("Player/heldItem");
+        heldItem.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Left click to use item
+        // This will need revisiting if we want to support button remapping
+        if (Input.GetMouseButtonDown(0) && holdingItem == true)
+        {
+            heldItem.SetActive(false);
+            holdingItem = false;
+            // This part was breaking, couldn't figure out why
+            // Rigidbody g = Instantiate(usedItem, heldItem.transform.position, heldItem.transform.rotation);
+            // g.velocity = transform.forward * 10;
+        }
     }
 
     private void FixedUpdate()
@@ -146,6 +170,17 @@ public class PlayerController : MonoBehaviour
     void OnJump()
     {
         wishJump = true;
+    }
+
+    // For Generic Collectible
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PickUp"))
+        {
+            other.gameObject.SetActive(false);
+            holdingItem = true;
+            heldItem.SetActive(true);
+        }
     }
 
 }
