@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody _RB;
     private Transform _TF;
+    private Transform _LF;
     
     //Control hover
     public float maxDistFromGround;
@@ -40,11 +41,21 @@ public class PlayerController : MonoBehaviour
     public Rigidbody usedItem;
     public LaunchProjectile lp;
 
+    //Dashing
+    public int maxDashes;
+    public float rechargeTime;
+    public float dashSpeed;
+    private int dashes;
+    private float timeSinceDash;
+    private bool wishDash;
+
     // Start is called before the first frame update
     void Start()
     {
+        //Initialize player controller
         _RB = gameObject.GetComponent<Rigidbody>();
         _TF = gameObject.GetComponent<Transform>();
+        _LF = _TF.GetChild(0).GetComponent<Transform>();
         wishDir = new Vector3(0, 0, 0);
         //wishDirR = new Vector3(0, 0, 0);
         wishJump = false;
@@ -52,6 +63,9 @@ public class PlayerController : MonoBehaviour
         falling = true;
         workingMaxFriction = MAX_FRICTION;
         workingFrictionCoef = friction_coef;
+        dashes = maxDashes;
+        timeSinceDash = 0;
+        wishDash = false;
 
         // Player health
         playerHealth = 3;
@@ -126,6 +140,21 @@ public class PlayerController : MonoBehaviour
         }
         wishJump = false;
 
+        //Dash
+        if (dashes > 0 && wishDash)
+        {
+            dashes--;
+            Vector3 dashDir = _LF.forward * dashSpeed;
+            _RB.AddForce(dashDir, ForceMode.VelocityChange);
+            timeSinceDash = 0;
+        }
+        else if (dashes < maxDashes && timeSinceDash > rechargeTime * (dashes + 1))
+        {
+            dashes++;
+        }
+        timeSinceDash += Time.deltaTime;
+        wishDash = false;
+
         Vector3 wishDirT = _TF.rotation * wishDir;
         Vector3 hvel = new Vector3(vel.x, 0f, vel.z);
         //Move character
@@ -170,7 +199,12 @@ public class PlayerController : MonoBehaviour
         wishJump = true;
     }
 
-    // Detecting Collisions
+    void OnDash()
+    {
+        wishDash = true;
+    }
+
+    // For Generic Collectible
     void OnTriggerEnter(Collider other)
     {
         // For Generic Collectible
