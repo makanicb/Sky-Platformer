@@ -72,4 +72,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Ignore Folder Attributes
+Thumbs.db
+Thumbs.db.meta
 .DS_Store
