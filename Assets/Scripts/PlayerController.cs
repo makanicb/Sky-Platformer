@@ -31,10 +31,14 @@ public class PlayerController : MonoBehaviour
     public float jumpStr;
     private bool falling;
 
+    // Player health
+    public int playerHealth;
+
     // Holding Item
     private bool holdingItem;
     public GameObject heldItem;
     public Rigidbody usedItem;
+    public LaunchProjectile lp;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +52,9 @@ public class PlayerController : MonoBehaviour
         falling = true;
         workingMaxFriction = MAX_FRICTION;
         workingFrictionCoef = friction_coef;
+
+        // Player health
+        playerHealth = 3;
 
         // Initialize Item related things
         holdingItem = false;
@@ -64,9 +71,7 @@ public class PlayerController : MonoBehaviour
         {
             heldItem.SetActive(false);
             holdingItem = false;
-            // This part was breaking, couldn't figure out why
-            // Rigidbody g = Instantiate(usedItem, heldItem.transform.position, heldItem.transform.rotation);
-            // g.velocity = transform.forward * 10;
+            lp.Launch();
         }
     }
 
@@ -172,14 +177,28 @@ public class PlayerController : MonoBehaviour
         wishJump = true;
     }
 
-    // For Generic Collectible
+    // Detecting Collisions
     void OnTriggerEnter(Collider other)
     {
+        // For Generic Collectible
         if (other.gameObject.CompareTag("PickUp"))
         {
             other.gameObject.SetActive(false);
             holdingItem = true;
             heldItem.SetActive(true);
+        }
+
+        // For Generic Enemy
+        if (other.gameObject.CompareTag("genericEnemy"))
+        {
+            playerHealth--;
+            Debug.Log("Ouch! You're down to " + playerHealth + " health.");
+
+            // Do something if health drops to 0
+            if (playerHealth < 0)
+            {
+                // Do a thing
+            }
         }
     }
 
