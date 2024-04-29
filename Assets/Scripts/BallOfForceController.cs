@@ -24,7 +24,9 @@ public class BallOfForceController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("EXPLOSION");
-        Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
-        rb.AddExplosionForce(explosionForce, _TF.position, Mathf.Infinity, upwardMod, ForceMode.Impulse);
+        Rigidbody rb = other.attachedRigidbody;
+        Transform tf = other.transform;
+        if(rb != null && !_TF.IsChildOf(tf))
+            rb.AddExplosionForce(explosionForce, _TF.position, Mathf.Infinity, upwardMod, ForceMode.Impulse);
     }
 }
