@@ -21,13 +21,16 @@ public class Hook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3[] positions = new Vector3[]
-            {
+        if (grapple != null)
+        {
+            Vector3[] positions = new Vector3[]
+                {
                 transform.position,
                 grapple.transform.position
-            };
+                };
 
-        lineRenderer.SetPositions(positions);
+            lineRenderer.SetPositions(positions);
+        }
 
     }
 
