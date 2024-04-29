@@ -58,8 +58,8 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-				},
-				{
+                },
+                {
                     "name": "Dash",
                     "type": "Button",
                     "id": "815b24ff-d025-4a59-9610-0e0cde0b43b0",
@@ -322,8 +322,8 @@
                     "action": "Use",
                     "isComposite": false,
                     "isPartOfComposite": false
-				},
-				{
+                },
+                {
                     "name": "",
                     "id": "010db14d-623e-4bda-895f-776526ccc56e",
                     "path": "<Keyboard>/shift",
@@ -426,6 +426,15 @@
                     "type": "PassThrough",
                     "id": "c82fc1d9-b2c5-4a13-8825-e42c3fe564a2",
                     "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Reset",
+                    "type": "Button",
+                    "id": "760aa740-9b4c-484e-8470-34104a38eba5",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -847,6 +856,17 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "89a89119-549c-4f5e-b9c8-61c333bfbbeb",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Reset",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
