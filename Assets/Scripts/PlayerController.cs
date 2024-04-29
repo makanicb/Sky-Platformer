@@ -151,7 +151,8 @@ public class PlayerController : MonoBehaviour
         if (dashes > 0 && wishDash)
         {
             dashes--;
-            Vector3 dashDir = _LF.forward * dashSpeed;
+            Vector3 dashDir = wishDir.magnitude == 0 ? _LF.forward : _LF.rotation * wishDir;
+            dashDir *= dashSpeed;
             _RB.AddForce(dashDir, ForceMode.VelocityChange);
             timeSinceDash = 0;
         }
