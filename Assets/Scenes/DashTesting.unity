@@ -495,11 +495,6 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 330585546}
-    - target: {fileID: 5211991662138631209, guid: 08c1c0def15db411dbca965dc02945df,
-        type: 3}
-      propertyPath: dashSpeed
-      value: 20
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
