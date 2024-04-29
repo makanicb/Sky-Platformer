@@ -202,7 +202,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &5211991662138631209
 MonoBehaviour:
@@ -233,7 +233,7 @@ MonoBehaviour:
   lp: {fileID: 3695120637451081707}
   maxDashes: 3
   rechargeTime: 5
-  dashSpeed: 10
+  dashSpeed: 20
 --- !u!114 &4027754544968991956
 MonoBehaviour:
   m_ObjectHideFlags: 0
