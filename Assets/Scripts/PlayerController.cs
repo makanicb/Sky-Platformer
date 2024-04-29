@@ -94,8 +94,8 @@ public class PlayerController : MonoBehaviour
         Vector3 vel = _RB.velocity;
 
         //Charging?
-        Debug.Log(vel.magnitude + ">=" + chargeThreshold);
-        Debug.Log(vel.magnitude >= chargeThreshold);
+        //Debug.Log(vel.magnitude + ">=" + chargeThreshold);
+        //Debug.Log(vel.magnitude >= chargeThreshold);
         BoF.SetActive((vel.magnitude >= chargeThreshold));
 
         if(!falling && vel.y <= 0)

@@ -23,10 +23,27 @@ public class BallOfForceController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("EXPLOSION");
+        //Debug.Log("EXPLOSION");
         Rigidbody rb = other.attachedRigidbody;
         Transform tf = other.transform;
         if(rb != null && !_TF.IsChildOf(tf))
             rb.AddExplosionForce(explosionForce, _TF.position, Mathf.Infinity, upwardMod, ForceMode.Impulse);
+        //Debug.Log(other.gameObject.name);
+        if(tf.gameObject.CompareTag("genericEnemy"))
+        {
+            EnemyController enemyController = tf.gameObject.GetComponent<EnemyController>();
+            Debug.Log("Hurt enemy through dash");
+            Debug.Log(enemyController);
+            if(enemyController != null)
+            {
+                enemyController.health--;
+                Debug.Log("Remaining health " + enemyController.health);
+                if(enemyController.health == 0)
+                {
+                    other.gameObject.SetActive(false);
+                }
+            }
+        }
+
     }
 }
