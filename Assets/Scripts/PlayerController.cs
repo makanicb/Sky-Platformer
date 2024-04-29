@@ -49,13 +49,19 @@ public class PlayerController : MonoBehaviour
     private float timeSinceDash;
     private bool wishDash;
 
+    //Charging
+    private GameObject BoF;
+    public float chargeThreshold;
+
     // Start is called before the first frame update
     void Start()
     {
         //Initialize player controller
         _RB = gameObject.GetComponent<Rigidbody>();
         _TF = gameObject.GetComponent<Transform>();
-        _LF = _TF.GetChild(0).GetComponent<Transform>();
+        _LF = _TF.Find("LookPoint");
+        BoF = _TF.Find("BallOfForce").gameObject;
+
         wishDir = new Vector3(0, 0, 0);
         //wishDirR = new Vector3(0, 0, 0);
         wishJump = false;
@@ -86,6 +92,12 @@ public class PlayerController : MonoBehaviour
     {
         //Debug.Log(falling);
         Vector3 vel = _RB.velocity;
+
+        //Charging?
+        Debug.Log(vel.magnitude + ">=" + chargeThreshold);
+        Debug.Log(vel.magnitude >= chargeThreshold);
+        BoF.SetActive((vel.magnitude >= chargeThreshold));
+
         if(!falling && vel.y <= 0)
         {
             falling = true;
