@@ -4,10 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PickUp
   - usedItem
   - genericEnemy
-  - PlayerHitbox
+  - PickUp
   layers:
   - Default
   - TransparentFX
@@ -15,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Grapple
   - 
   - 
   - 
