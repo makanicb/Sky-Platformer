@@ -65,14 +65,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Left click to use item
-        // This will need revisiting if we want to support button remapping
-        if (Input.GetMouseButtonDown(0) && holdingItem == true)
-        {
-            heldItem.SetActive(false);
-            holdingItem = false;
-            lp.Launch();
-        }
+        
     }
 
     private void FixedUpdate()
@@ -199,6 +192,18 @@ public class PlayerController : MonoBehaviour
             {
                 // Do a thing
             }
+        }
+    }
+
+    void OnUse()
+    {
+        // F to use item
+        // This will need revisiting if we want to support button remapping
+        if (holdingItem == true)
+        {
+            heldItem.SetActive(false);
+            holdingItem = false;
+            lp.Launch();
         }
     }
 
