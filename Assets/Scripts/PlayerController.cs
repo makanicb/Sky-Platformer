@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
     private GameObject BoF;
     public float chargeThreshold;
 
-    //ResetScene
+    //Reset on death
     public ResetController reset;
 
     // Start is called before the first frame update
@@ -241,8 +241,8 @@ public class PlayerController : MonoBehaviour
             if (playerHealth <= 0)
             {
                 // Do a thing
-                Debug.Log("YOU DIED! HAHAHAHA");
                 reset.ResetScene();
+
             }
         }
     }
