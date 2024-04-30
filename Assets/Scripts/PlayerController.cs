@@ -53,6 +53,9 @@ public class PlayerController : MonoBehaviour
     private GameObject BoF;
     public float chargeThreshold;
 
+    //Reset on death
+    public ResetController reset;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -235,9 +238,11 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Ouch! You're down to " + playerHealth + " health.");
 
             // Do something if health drops to 0
-            if (playerHealth < 0)
+            if (playerHealth <= 0)
             {
                 // Do a thing
+                reset.ResetScene();
+
             }
         }
     }
