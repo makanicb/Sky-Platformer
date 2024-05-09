@@ -8,6 +8,7 @@ public class Grapple : MonoBehaviour
     [SerializeField] float stopDistance = 4f;
     [SerializeField] GameObject hookPrefab;
     [SerializeField] Transform shootTransform;
+    [SerializeField] Transform lookPoint;
 
     Hook hook;
     bool pulling;
@@ -32,7 +33,7 @@ public class Grapple : MonoBehaviour
             StopAllCoroutines();
             pulling = false;
             hook = Instantiate(hookPrefab, shootTransform.position, Quaternion.identity).GetComponent<Hook>();
-            hook.Initialize(this, shootTransform);
+            hook.Initialize(this, lookPoint);
             StartCoroutine(DestroyHookAfterLifetime());
             wishHook = false;
         }
