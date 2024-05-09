@@ -3184,6 +3184,21 @@ PrefabInstance:
       propertyPath: HookForce
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5196350202588570817, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.6361
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196350202588570817, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6093
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196350202588570817, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1191
+      objectReference: {fileID: 0}
     - target: {fileID: 6671535267001897567, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
       propertyPath: Camera
