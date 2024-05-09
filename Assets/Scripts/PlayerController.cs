@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     private bool falling;
 
     // Player health
+    private int maxPlayerHealth;
     public int playerHealth;
 
     // Holding Item
@@ -77,6 +78,7 @@ public class PlayerController : MonoBehaviour
         wishDash = false;
 
         // Player health
+        maxPlayerHealth = 3;
         playerHealth = 3;
 
         // Initialize Item related things
@@ -229,6 +231,14 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             holdingItem = true;
             heldItem.SetActive(true);
+        }
+
+        // For Heart Boosters
+        if (other.gameObject.CompareTag("heart"))
+        {
+            Destroy(other.gameObject);
+            maxPlayerHealth++;
+            playerHealth++;
         }
 
         // For Generic Enemy
