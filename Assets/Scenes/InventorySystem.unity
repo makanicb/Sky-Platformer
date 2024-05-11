@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ace7b34c98c684088aa66334f0679b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 1614e8dbae7b29848aafc4a8e6d1806a, type: 2}
+  item: {fileID: 11400000, guid: ed615875e98a742448fe57526d3f2b79, type: 2}
   items: []
 --- !u!65 &252404408
 BoxCollider:
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ace7b34c98c684088aa66334f0679b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 1614e8dbae7b29848aafc4a8e6d1806a, type: 2}
+  item: {fileID: 11400000, guid: 623fa1896379ccd4d81e0c09084622b3, type: 2}
   items: []
 --- !u!65 &1153899418
 BoxCollider:
@@ -1390,7 +1390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ace7b34c98c684088aa66334f0679b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 1614e8dbae7b29848aafc4a8e6d1806a, type: 2}
+  item: {fileID: 11400000, guid: ed615875e98a742448fe57526d3f2b79, type: 2}
   items: []
 --- !u!65 &1647234314
 BoxCollider:
@@ -2140,6 +2140,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: lp
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6671535267001897567, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
       propertyPath: Camera
@@ -2205,7 +2210,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2375361851770062752, guid: c44498a3b2b2643428c0dedcb7e7364e, type: 3}
+    - {fileID: 4234011036316552267, guid: c44498a3b2b2643428c0dedcb7e7364e, type: 3}
+    - {fileID: 6355929502837145952, guid: c44498a3b2b2643428c0dedcb7e7364e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

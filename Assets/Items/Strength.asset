@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f5bb3cfdfd96bb48981e0c488ca2731, type: 3}
-  m_Name: New Item
+  m_Name: Strength
   m_EditorClassIdentifier: 
-  name: Health
-  icon: {fileID: 21300000, guid: de4edae6b541d014c8d96ac73d44e240, type: 3}
+  name: Strength Potion
+  icon: {fileID: 21300000, guid: 7258460e2e3d0fd4c8be94167401affa, type: 3}
   showInInventory: 1
