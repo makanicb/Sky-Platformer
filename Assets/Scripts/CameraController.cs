@@ -41,7 +41,7 @@ public class CameraController : MonoBehaviour
         Vector3 cameraDir = -_LF.forward;
         RaycastHit rayHit;
         Vector3 cameraPosition;
-        if(Physics.Raycast(_TF.position, cameraDir, out rayHit, maxCameraDist))
+        if(Physics.Raycast(_LF.position, cameraDir, out rayHit, maxCameraDist))
         {
             cameraPosition = rayHit.point;
         }

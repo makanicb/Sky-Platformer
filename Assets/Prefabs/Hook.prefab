@@ -251,4 +251,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ccd87971bb72c4b9a38f42439fc4fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HookForce: 25
+  HookForce: 100
