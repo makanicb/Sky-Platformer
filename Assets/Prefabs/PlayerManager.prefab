@@ -289,6 +289,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3695120637451081707, guid: 08c1c0def15db411dbca965dc02945df,
+        type: 3}
+      propertyPath: launchVelocity
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695120637451081707, guid: 08c1c0def15db411dbca965dc02945df,
+        type: 3}
+      propertyPath: launchHeightFactor
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4027754544968991956, guid: 08c1c0def15db411dbca965dc02945df,
         type: 3}
       propertyPath: speed
