@@ -7,13 +7,14 @@ public class LaunchProjectile : MonoBehaviour
     // Instaniate vars
     public GameObject usedItem;
     public GameObject launchOrigin;
-    public float launchHeightFactor = 0.4f;
-    public float launchVelocity = 700f;
+    public float launchHeightFactor;
+    public float launchVelocity;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        launchHeightFactor = 0.2f;
+        launchVelocity = 1500f;
     }
 
     // Update is called once per frame

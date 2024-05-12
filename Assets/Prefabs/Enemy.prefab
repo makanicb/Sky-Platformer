@@ -226,6 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7106908639257536763}
+  player: {fileID: 0}
   health: 3
 --- !u!54 &-3324759535808230095
 Rigidbody:
