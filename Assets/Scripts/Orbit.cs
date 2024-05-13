@@ -15,6 +15,12 @@ public class Orbit : MonoBehaviour
 
         // Move the object to the target position
         transform.position = orbitPosition;
+
+        // Calculate the direction from the object to the orbit center
+        Vector3 lookDir = orbitCenter.position - transform.position;
+
+        // Rotate the object to face the center of the orbit with the red axis
+        transform.rotation = Quaternion.LookRotation(lookDir, transform.up);
     }
 
     private Vector3 CalculateOrbitPosition()
