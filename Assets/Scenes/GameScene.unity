@@ -1135,6 +1135,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: groundZero
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b7308d8ea5c9e4babdccaa309b194f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1767,10 +1772,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3718371245222020591, guid: f4a313019540ea24d81d6558532d2272,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -298187599870391511, guid: f4a313019540ea24d81d6558532d2272,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f4a313019540ea24d81d6558532d2272,
         type: 3}
       propertyPath: m_Name
       value: firstIsland
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4a313019540ea24d81d6558532d2272,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
