@@ -29,7 +29,7 @@
                     "id": "9c32de64-59d5-4290-a8fc-eaf61f1cede9",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": false
                 },
                 {
@@ -63,6 +63,15 @@
                     "name": "Dash",
                     "type": "Button",
                     "id": "815b24ff-d025-4a59-9610-0e0cde0b43b0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Reset",
+                    "type": "Button",
+                    "id": "03123a80-bcb5-41fe-baba-24a40f9ac08d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -333,6 +342,17 @@
                     "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c655a0f-3446-47bc-a281-9e62dfa8b886",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -426,15 +446,6 @@
                     "type": "PassThrough",
                     "id": "c82fc1d9-b2c5-4a13-8825-e42c3fe564a2",
                     "expectedControlType": "Quaternion",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Reset",
-                    "type": "Button",
-                    "id": "760aa740-9b4c-484e-8470-34104a38eba5",
-                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -856,17 +867,6 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "89a89119-549c-4f5e-b9c8-61c333bfbbeb",
-                    "path": "<Keyboard>/backspace",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Reset",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

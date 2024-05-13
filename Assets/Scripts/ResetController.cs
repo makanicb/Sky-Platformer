@@ -8,7 +8,7 @@ public class ResetController : MonoBehaviour
 {
     public void ResetScene()
     {
-        SceneManager.LoadScene("DemoScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void OnReset()

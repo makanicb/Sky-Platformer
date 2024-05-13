@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hook : MonoBehaviour
 {
-    [SerializeField] float HookForce = 25f;
+    [SerializeField] float HookForce;
 
     Grapple grapple;
     Rigidbody rigid;
