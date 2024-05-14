@@ -1264,7 +1264,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1354445856614592872, guid: f4a313019540ea24d81d6558532d2272, type: 3}
 --- !u!1001 &693654022
@@ -1386,7 +1386,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6897166960308541686, guid: f4a313019540ea24d81d6558532d2272, type: 3}
 --- !u!1 &747336697 stripped
@@ -2393,7 +2393,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!4 &1057768612 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4a313019540ea24d81d6558532d2272,
@@ -4835,6 +4835,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1924603606}
     m_Modifications:
+    - target: {fileID: -6582819432313883951, guid: 79910bcb0027ce64e92c4f8375cef077,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2375775394028877681, guid: 79910bcb0027ce64e92c4f8375cef077,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -4894,6 +4899,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: risingIsland
+      objectReference: {fileID: 0}
+    - target: {fileID: 3509254081445858334, guid: 79910bcb0027ce64e92c4f8375cef077,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4997,31 +5007,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
-        type: 3}
-      propertyPath: MAX_SPEED
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
-        type: 3}
-      propertyPath: MAX_FRICTION
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5196350202588570817, guid: c44498a3b2b2643428c0dedcb7e7364e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.6361
-      objectReference: {fileID: 0}
-    - target: {fileID: 5196350202588570817, guid: c44498a3b2b2643428c0dedcb7e7364e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.6093
-      objectReference: {fileID: 0}
-    - target: {fileID: 5196350202588570817, guid: c44498a3b2b2643428c0dedcb7e7364e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.1191
-      objectReference: {fileID: 0}
     - target: {fileID: 6671535267001897567, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
       propertyPath: Camera
