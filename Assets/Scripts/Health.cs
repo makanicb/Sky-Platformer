@@ -14,6 +14,9 @@ public class Health : MonoBehaviour
 
     void Update() {
 
+        health = gameObject.GetComponent<PlayerController>().playerHealth; //QUICK FIX TO MAKE HEALTH WORK FOR ALPHA BUILD
+                                                                           //TO-DO: REPLACE FUNCTIONALITY WITH OBSERVER
+
         if (health > maxPlayerHealth) {
             health = maxPlayerHealth;
         }
