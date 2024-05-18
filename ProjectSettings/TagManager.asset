@@ -8,6 +8,7 @@ TagManager:
   - genericEnemy
   - PickUp
   - heart
+  - BruteEnemy
   layers:
   - Default
   - TransparentFX

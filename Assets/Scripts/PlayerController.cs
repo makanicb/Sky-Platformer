@@ -242,7 +242,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // For Generic Enemy
-        if (other.gameObject.CompareTag("genericEnemy"))
+        if (other.gameObject.CompareTag("genericEnemy") || other.gameObject.CompareTag("BruteEnemy"))
         {
             playerHealth--;
             Debug.Log("Ouch! You're down to " + playerHealth + " health.");
