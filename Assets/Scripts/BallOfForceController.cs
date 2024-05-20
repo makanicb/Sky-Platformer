@@ -46,12 +46,7 @@ public class BallOfForceController : MonoBehaviour
             if(enemyController != null)
             {
                 //Debug.Log("Hurt enemy through dash");
-                enemyController.health--;
-                Debug.Log("Remaining health " + enemyController.health);
-                if(enemyController.health == 0)
-                {
-                    other.gameObject.SetActive(false);
-                }
+                enemyController.damage(1);
             }
         }
 
