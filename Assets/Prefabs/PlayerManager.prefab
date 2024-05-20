@@ -366,7 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262d67ee6f561e44193c272045b40155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pullSpeed: 0.2
+  pullSpeed: 1
   stopDistance: 4
   hookPrefab: {fileID: 8020663140112745568, guid: 39adfca6459fa964b95a6a46541383e6,
     type: 3}

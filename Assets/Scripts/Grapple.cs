@@ -23,11 +23,14 @@ public class Grapple : MonoBehaviour
         wishHook = false;
         wishRelease = false;
         toggle = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         if(hook == null && wishHook)
         {
             StopAllCoroutines();
@@ -89,4 +92,5 @@ public class Grapple : MonoBehaviour
             wishRelease = true;
         }
     }
+    
 }
