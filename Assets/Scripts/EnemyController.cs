@@ -5,12 +5,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 //using static UnityEditor.Progress;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : Dameagable
 {
     // Initialize vars
     public GameObject enemy;
     public GameObject player;
-    public int health;
+    //public int health;
     float enemySpeed;
     float minDist;
     float randX;
@@ -135,11 +135,11 @@ public class EnemyController : MonoBehaviour
             parentObject.SetActive(false);
 
             // Destroy enemy if health drops to 0
-            if (health <= 0)
+            /*if (health <= 0)
             {
                 // Debug.Log("You killed the enemy!");
                 enemy.SetActive(false);
-            }
+            }*/
         }
     }
 
