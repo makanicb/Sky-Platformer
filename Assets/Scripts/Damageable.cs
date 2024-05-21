@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
-    [HideInInspector]
     public int health;
     public int maxHealth;
+
+    public virtual void Start()
+    {
+        health = maxHealth;
+    }
 
     public void damage(int dmg)
     {
