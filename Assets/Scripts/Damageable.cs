@@ -12,7 +12,7 @@ public class Damageable : MonoBehaviour
         health = maxHealth;
     }
 
-    public void damage(int dmg)
+    public virtual void damage(int dmg)
     {
         health -= dmg;
         health = Mathf.Min(health, maxHealth);
