@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Damageable
 {
     private Rigidbody _RB;
     private Transform _TF;
@@ -33,8 +33,8 @@ public class PlayerController : MonoBehaviour
     private bool falling;
 
     // Player health
-    private int maxPlayerHealth;
-    public int playerHealth;
+    //private int maxHealth;
+    //public int health;
 
     // Holding Item
     private bool holdingItem;
@@ -58,8 +58,10 @@ public class PlayerController : MonoBehaviour
     public ResetController reset;
 
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        base.Start();
+
         //Initialize player controller
         _RB = gameObject.GetComponent<Rigidbody>();
         _TF = gameObject.GetComponent<Transform>();
@@ -76,10 +78,6 @@ public class PlayerController : MonoBehaviour
         dashes = maxDashes;
         timeSinceDash = 0;
         wishDash = false;
-
-        // Player health
-        maxPlayerHealth = 3;
-        playerHealth = 3;
 
         // Initialize Item related things
         holdingItem = false;
@@ -234,15 +232,14 @@ public class PlayerController : MonoBehaviour
         }
 
         // For Heart Boosters
-        if (other.gameObject.CompareTag("heart"))
+        /*if (other.gameObject.CompareTag("heart"))
         {
             Destroy(other.gameObject);
-            maxPlayerHealth++;
             playerHealth++;
-        }
+        }*/
 
         // For Generic Enemy
-        if (other.gameObject.CompareTag("genericEnemy") || other.gameObject.CompareTag("BruteEnemy"))
+        /*if (other.gameObject.CompareTag("genericEnemy"))
         {
             playerHealth--;
             Debug.Log("Ouch! You're down to " + playerHealth + " health.");
@@ -254,7 +251,7 @@ public class PlayerController : MonoBehaviour
                 reset.ResetScene();
 
             }
-        }
+        }*/
     }
 
     void OnUse()

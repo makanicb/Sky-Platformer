@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 //using static UnityEditor.Progress;
 
-public class EnemyController : Dameagable
+public class EnemyController : Damageable
 {
     // Initialize vars
     public GameObject enemy;
@@ -30,8 +30,10 @@ public class EnemyController : Dameagable
     Coroutine fleeCoroutine;
     
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        base.Start();
+
         Debug.Log("These logs can be commented out in EnemyController.cs");
         health = 3;
         Debug.Log("Starting health: " + health);
@@ -113,10 +115,9 @@ public class EnemyController : Dameagable
     // Decrement health and destroy usedItem if it hits enemy
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("usedItem"))
+        if (other.gameObject.CompareTag("Damager"))
         {
             // Decrement health
-            health--;
             Debug.Log("Remaining health: " + health);
 
             // Change state
@@ -131,8 +132,8 @@ public class EnemyController : Dameagable
             }
 
             // Since tag is on child of prefab, get parent to access prefab
-            var parentObject = other.transform.parent.gameObject;
-            parentObject.SetActive(false);
+            /*var parentObject = other.transform.parent.gameObject;
+            parentObject.SetActive(false);*/
 
             // Destroy enemy if health drops to 0
             /*if (health <= 0)

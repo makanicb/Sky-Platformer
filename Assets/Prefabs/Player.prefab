@@ -185,6 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4cf188668673437ab8cdb9d95cce862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 3
   maxDistFromGround: 3
   hoverHeight: 1.5
   springStr: 150
@@ -196,7 +198,6 @@ MonoBehaviour:
   MAX_DRAG: 4
   drag_coef: 1
   jumpStr: 20
-  playerHealth: 0
   heldItem: {fileID: 7207390562213431092}
   usedItem: {fileID: 7263818164247209586, guid: c397cedb4438a2b469325eaab3c02190,
     type: 3}
@@ -548,6 +549,21 @@ PrefabInstance:
       propertyPath: _PRB
       value: 
       objectReference: {fileID: -7588241603182981146}
+    - target: {fileID: 8727973224644153256, guid: f3dc80649922e4664b79a256ae0631e6,
+        type: 3}
+      propertyPath: damage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727973224644153256, guid: f3dc80649922e4664b79a256ae0631e6,
+        type: 3}
+      propertyPath: targets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727973224644153256, guid: f3dc80649922e4664b79a256ae0631e6,
+        type: 3}
+      propertyPath: targets.Array.data[0]
+      value: genericEnemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
