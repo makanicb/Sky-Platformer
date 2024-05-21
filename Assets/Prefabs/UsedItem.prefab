@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 7263818164247209586}
   m_Layer: 0
   m_Name: UsedItem
-  m_TagString: usedItem
+  m_TagString: Damager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
