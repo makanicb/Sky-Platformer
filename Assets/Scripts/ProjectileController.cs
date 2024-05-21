@@ -13,9 +13,10 @@ public class ProjectileController : DamageField
                 Damageable dam = other.GetComponent<Damageable>();
                 if(dam is not null)
                 {
+                    Debug.Log("BURN");
                     dam.damage(damage);
                 }
-                gameObject.SetActive(false);
+                gameObject.transform.parent.gameObject.SetActive(false);
             }
         }
     }

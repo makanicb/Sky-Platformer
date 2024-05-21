@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 667015128733689565}
   - component: {fileID: 8061158884749426856}
   - component: {fileID: 4542404692820777330}
+  - component: {fileID: 7139233999757150318}
   m_Layer: 0
   m_Name: Trigger
-  m_TagString: usedItem
+  m_TagString: Damager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,6 +106,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7139233999757150318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001220650439706049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c99bcce2b2ea4912ad8b98d13e955ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  targets:
+  - genericEnemy
 --- !u!1 &2337030565843567710
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +136,7 @@ GameObject:
   - component: {fileID: 7263818164247209586}
   m_Layer: 0
   m_Name: UsedItem
-  m_TagString: Damager
+  m_TagString: usedItem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
