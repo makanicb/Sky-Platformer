@@ -2635,14 +2635,16 @@ MonoBehaviour:
 
     Shoot: F
 
-    Dash: Shift
+    Dash:
+    Shift
 
     BulletTime: Tab
 
 
     Grapple onto purple walls and jump
 
-    Shoot enemies with yellow cubes
+    Shoot
+    enemies with yellow cubes
 
     Or bash them with your dash
 
@@ -3177,6 +3179,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2375361851770062752, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 4169431998462453300, guid: 9d45b52a91cf52b49bea438fe29d5c82,
+        type: 3}
+    - target: {fileID: 2375361851770062752, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: pullSoundClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c7691dae5060955438a43f823c6d86b2, type: 3}
     - target: {fileID: 6671535267001897567, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
       propertyPath: Camera
