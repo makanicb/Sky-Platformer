@@ -9,6 +9,7 @@ TagManager:
   - PickUp
   - heart
   - BruteEnemy
+  - Damager
   layers:
   - Default
   - TransparentFX

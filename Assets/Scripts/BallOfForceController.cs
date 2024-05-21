@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallOfForceController : MonoBehaviour
+public class BallOfForceController : DamageField
 {
     public float explosionForce;
     public float upwardMod;
@@ -22,8 +22,9 @@ public class BallOfForceController : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
+        base.OnTriggerEnter(other);
         //Debug.Log("EXPLOSION");
         Rigidbody rb = other.attachedRigidbody;
         Transform tf = other.transform;
@@ -39,21 +40,16 @@ public class BallOfForceController : MonoBehaviour
             rb.AddExplosionForce(expForce, _TF.position, Mathf.Infinity, upwardMod, ForceMode.Impulse);
         }
         //Debug.Log(other.gameObject.name);
-        if(tf.gameObject.CompareTag("genericEnemy"))
+        /*if(tf.gameObject.CompareTag("genericEnemy"))
         {
             EnemyController enemyController = tf.gameObject.GetComponent<EnemyController>();
             //Debug.Log(enemyController);
             if(enemyController != null)
             {
                 //Debug.Log("Hurt enemy through dash");
-                enemyController.health--;
-                Debug.Log("Remaining health " + enemyController.health);
-                if(enemyController.health == 0)
-                {
-                    other.gameObject.SetActive(false);
-                }
+                enemyController.damage(1);
             }
-        }
+        }*/
 
     }
 }
