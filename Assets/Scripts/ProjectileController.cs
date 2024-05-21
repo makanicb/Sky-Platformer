@@ -2,15 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageField : MonoBehaviour
+public class ProjectileController : DamageField
 {
-    [SerializeField] protected int damage;
-    [SerializeField] protected List<string> targets;
-
-    
-    protected virtual void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
-        foreach(string t in targets)
+        foreach (string t in targets)
         {
             if(other.gameObject.CompareTag(t))
             {
@@ -19,6 +15,7 @@ public class DamageField : MonoBehaviour
                 {
                     dam.damage(damage);
                 }
+                gameObject.SetActive(false);
             }
         }
     }
