@@ -112,36 +112,34 @@ public class EnemyController : Damageable
         }
     }
 
-    // Decrement health and destroy usedItem if it hits enemy
-    void OnTriggerEnter(Collider other)
+    // Change state if hurt
+    public override void damage(int dmg)
     {
-        if (other.gameObject.CompareTag("Damager"))
+        base.damage(dmg);
+        // Decrement health
+        Debug.Log("Remaining health: " + health);
+
+        // Change state
+        if (state == State.Passive)
         {
-            // Decrement health
-            Debug.Log("Remaining health: " + health);
-
-            // Change state
-            if (state == State.Passive)
-            {
-                state = State.Aggressive;
-            }
-            else if (health == 1)
-            {
-                state = State.Flee;
-                fleeCoroutine = StartCoroutine(FleeTimer(5f));
-            }
-
-            // Since tag is on child of prefab, get parent to access prefab
-            /*var parentObject = other.transform.parent.gameObject;
-            parentObject.SetActive(false);*/
-
-            // Destroy enemy if health drops to 0
-            /*if (health <= 0)
-            {
-                // Debug.Log("You killed the enemy!");
-                enemy.SetActive(false);
-            }*/
+            state = State.Aggressive;
         }
+        else if (health == 1)
+        {
+            state = State.Flee;
+            fleeCoroutine = StartCoroutine(FleeTimer(5f));
+        }
+
+        // Since tag is on child of prefab, get parent to access prefab
+        /*var parentObject = other.transform.parent.gameObject;
+        parentObject.SetActive(false);*/
+
+        // Destroy enemy if health drops to 0
+        /*if (health <= 0)
+        {
+            // Debug.Log("You killed the enemy!");
+            enemy.SetActive(false);
+        }*/
     }
 
     IEnumerator IdleTimer(float delay)
