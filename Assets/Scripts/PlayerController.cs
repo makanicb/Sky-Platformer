@@ -266,4 +266,9 @@ public class PlayerController : Damageable
         }
     }
 
+    protected override void onDeath()
+    {
+        reset.ResetScene();
+    }
+
 }
