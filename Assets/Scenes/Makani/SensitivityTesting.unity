@@ -5009,24 +5009,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6671535267001897567, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
-      propertyPath: maxCo
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6671535267001897567, guid: c44498a3b2b2643428c0dedcb7e7364e,
-        type: 3}
-      propertyPath: speed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 6671535267001897567, guid: c44498a3b2b2643428c0dedcb7e7364e,
-        type: 3}
       propertyPath: Camera
       value: 
       objectReference: {fileID: 1446958596}
-    - target: {fileID: 6671535267001897567, guid: c44498a3b2b2643428c0dedcb7e7364e,
-        type: 3}
-      propertyPath: webGLCo
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 6817930318609267936, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
       propertyPath: m_Name

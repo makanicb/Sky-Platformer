@@ -172,7 +172,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &5211991662138631209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,11 +219,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed14e0270365741c2b9a6a8771501b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 900
+  speed: 200
+  webGLCo: 0.1
   Camera: {fileID: 0}
   maxCameraDist: 10
   maxAngle: 60
   minAngle: -30
+  speedCo: 1
+  maxCo: 2
+  minCo: 0
+  tuneStep: 0.1
 --- !u!114 &3695120637451081707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,8 +244,8 @@ MonoBehaviour:
   usedItem: {fileID: 2337030565843567710, guid: c397cedb4438a2b469325eaab3c02190,
     type: 3}
   launchOrigin: {fileID: 5731962539762106606}
-  launchHeightFactor: 0.4
-  launchVelocity: 700
+  launchHeightFactor: 0.2
+  launchVelocity: 1500
 --- !u!1 &5731962539762106606
 GameObject:
   m_ObjectHideFlags: 0
