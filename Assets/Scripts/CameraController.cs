@@ -26,8 +26,8 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _TF.Rotate(0f, delta.x * speed, 0f, Space.World);
-        float deltaAngle = delta.y * speed;
+        _TF.Rotate(0f, delta.x * speed * Time.deltaTime, 0f, Space.World);
+        float deltaAngle = delta.y * speed * Time.deltaTime;
         float trueNewAngle = Mathf.Clamp(currentAngle + deltaAngle, minAngle, maxAngle);
         float trueDeltaAngle = trueNewAngle - currentAngle;
         _LF.Rotate(trueDeltaAngle, 0f, 0f, Space.Self);
