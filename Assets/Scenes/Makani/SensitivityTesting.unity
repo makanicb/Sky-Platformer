@@ -5009,8 +5009,13 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6671535267001897567, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
+      propertyPath: maxCo
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671535267001897567, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
       propertyPath: speed
-      value: 1
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6671535267001897567, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
