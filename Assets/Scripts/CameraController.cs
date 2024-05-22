@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
     private Transform _LF;
     //Camera movement and placement
     public float speed;
+    [SerializeField] private float webGLCo;
     public Transform Camera;
     public float maxCameraDist;
     public float maxAngle, minAngle;
@@ -21,6 +22,10 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(Application.platform == RuntimePlatform.WebGLPlayer)
+        {
+            speed *= webGLCo;
+        }
         delta = new Vector2(0f, 0f);
         _TF = gameObject.GetComponent<Transform>();
         _LF = _TF.GetChild(0).GetComponent<Transform>();
