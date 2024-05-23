@@ -15,8 +15,9 @@ public class ProjectileController : DamageField
                 {
                     Debug.Log("BURN");
                     dam.damage(damage);
+                    gameObject.transform.parent.gameObject.SetActive(false);
                 }
-                gameObject.transform.parent.gameObject.SetActive(false);
+                
             }
         }
     }
