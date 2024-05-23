@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6543464171159705862}
   m_Layer: 0
   m_Name: Trigger
-  m_TagString: genericEnemy
+  m_TagString: Damager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
