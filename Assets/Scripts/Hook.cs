@@ -15,7 +15,18 @@ public class Hook : MonoBehaviour
         this.grapple = grapple;
         rigid = GetComponent<Rigidbody>();
         lineRenderer = GetComponent<LineRenderer>();
-        rigid.AddForce(transform.forward * HookForce, ForceMode.Impulse);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, LayerMask.GetMask("Grapple"), QueryTriggerInteraction.Collide))
+        {
+            Debug.Log("I hit something!");
+            transform.position = hit.point;
+            attach();
+        }
+        else
+        {
+            Debug.Log("I did not hit something");
+            rigid.AddForce(transform.forward * HookForce, ForceMode.Impulse);
+        }
     }
 
     // Update is called once per frame
