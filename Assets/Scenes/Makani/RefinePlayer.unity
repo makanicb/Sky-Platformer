@@ -5010,7 +5010,7 @@ PrefabInstance:
     - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
       propertyPath: jumpStr
-      value: 80
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
