@@ -36,10 +36,15 @@ public class Hook : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if((LayerMask.GetMask("Grapple") & 1 << other.gameObject.layer) > 0) {
-            rigid.useGravity = false;
-            rigid.isKinematic = true;
-
-            grapple.StartPull();
+            attach();
         }
+    }
+
+    private void attach()
+    {
+        rigid.useGravity = false;
+        rigid.isKinematic = true;
+
+        grapple.StartPull();
     }
 }
