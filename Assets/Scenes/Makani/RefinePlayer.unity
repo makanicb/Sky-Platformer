@@ -5072,7 +5072,7 @@ PrefabInstance:
     - target: {fileID: 6355929502837145952, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
       propertyPath: launchHeightFactor
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6671535267001897567, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
