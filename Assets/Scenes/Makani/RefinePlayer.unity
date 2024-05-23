@@ -2393,7 +2393,7 @@ Rigidbody:
   m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!4 &1057768612 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4a313019540ea24d81d6558532d2272,
@@ -5040,6 +5040,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
+      propertyPath: drag_coef
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
       propertyPath: MAX_FRICTION
       value: 100
       objectReference: {fileID: 0}
@@ -5052,6 +5057,16 @@ PrefabInstance:
         type: 3}
       propertyPath: chargeThreshold
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355929502837145952, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: launchVelocity
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6355929502837145952, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: launchHeightFactor
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6671535267001897567, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
@@ -5072,6 +5087,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8400283359846811948, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8814170164244648714, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
