@@ -45,10 +45,13 @@ public class Grapple : MonoBehaviour
         }
         wishHook = false;
         wishRelease = false;
+    }
 
+    private void FixedUpdate()
+    {
         if (!pulling || hook == null) return;
 
-        if(Vector3.Distance(transform.position, hook.transform.position) <= stopDistance)
+        if (Vector3.Distance(transform.position, hook.transform.position) <= stopDistance)
         {
             DestroyHook();
         }
