@@ -5007,6 +5007,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: jumpStr
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: MAX_DRAG
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: MAX_ACCEL
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: MAX_SPEED
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: dashSpeed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: MAX_FRICTION
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: friction_coef
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: chargeThreshold
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6671535267001897567, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
       propertyPath: Camera
@@ -5076,6 +5116,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9061909742611601773, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
