@@ -26,7 +26,7 @@ public class LaunchProjectile : MonoBehaviour
     public void Launch()
     {
         GameObject shot = Instantiate(usedItem, launchOrigin.transform.position, launchOrigin.transform.rotation);
-        shot.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, launchVelocity * launchHeightFactor, launchVelocity));
+        shot.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, launchVelocity * launchHeightFactor, launchVelocity), ForceMode.VelocityChange);
 
         // Use Coroutine to get delay
         StartCoroutine(SetFalse(shot));
