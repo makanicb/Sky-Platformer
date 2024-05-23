@@ -5019,6 +5019,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2375361851770062752, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: pullSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
       propertyPath: jumpStr
@@ -5027,7 +5032,7 @@ PrefabInstance:
     - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
       propertyPath: MAX_DRAG
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2533220210578961058, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}

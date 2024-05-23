@@ -54,7 +54,7 @@ public class Grapple : MonoBehaviour
         }
         else
         {
-            rigid.AddForce((hook.transform.position - transform.position).normalized * pullSpeed, ForceMode.VelocityChange);
+            rigid.AddForce((hook.transform.position - transform.position).normalized * pullSpeed, ForceMode.Acceleration);
         }
     }
 
