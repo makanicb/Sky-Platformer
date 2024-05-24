@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Grapple : MonoBehaviour
 {
-    [SerializeField] float pullSpeed = 0.5f;
-    [SerializeField] float stopDistance = 4f;
+    [SerializeField] float pullSpeed;
+    [SerializeField] float stopDistance;
+    [SerializeField] public float maxDistance;
     [SerializeField] GameObject hookPrefab;
     [SerializeField] Transform shootTransform;
     //[SerializeField] Transform lookPoint;
@@ -49,15 +50,17 @@ public class Grapple : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!pulling || hook == null) return;
+        if (hook == null) return;
+        float dist = Vector3.Distance(transform.position, hook.transform.position);
+        Debug.Log("Distance " + dist);
 
-        if (Vector3.Distance(transform.position, hook.transform.position) <= stopDistance)
-        {
-            DestroyHook();
-        }
-        else
+        if(pulling && dist >= stopDistance)
         {
             rigid.AddForce((hook.transform.position - transform.position).normalized * pullSpeed, ForceMode.Acceleration);
+        }
+        else if (pulling || !pulling && dist >= maxDistance)
+        {
+            DestroyHook();
         }
     }
 

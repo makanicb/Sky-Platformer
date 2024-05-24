@@ -16,7 +16,7 @@ public class Hook : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
         lineRenderer = GetComponent<LineRenderer>();
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, LayerMask.GetMask("Grapple"), QueryTriggerInteraction.Collide))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, grapple.maxDistance, LayerMask.GetMask("Grapple"), QueryTriggerInteraction.Collide))
         {
             Debug.Log("I hit something!");
             transform.position = hit.point;
