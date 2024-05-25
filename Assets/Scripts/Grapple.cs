@@ -37,7 +37,7 @@ public class Grapple : MonoBehaviour
             StopAllCoroutines();
             pulling = false;
             hook = Instantiate(hookPrefab, shootTransform.position, Quaternion.identity).GetComponent<Hook>();
-            hook.Initialize(this, shootTransform);
+            hook.Initialize(this, shootTransform, maxDistance);
             StartCoroutine(DestroyHookAfterLifetime());
         }
         else if(hook != null && wishRelease)
