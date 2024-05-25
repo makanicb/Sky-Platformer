@@ -28,7 +28,7 @@ public class BallOfForceController : DamageField
         //Debug.Log("EXPLOSION");
         Rigidbody rb = other.attachedRigidbody;
         Transform tf = other.transform;
-        if (rb != null && !_TF.IsChildOf(tf))
+        if (rb != null && !_TF.IsChildOf(tf.parent))
         {
             Vector3 offset = tf.position - _TF.position;
             Vector3 dir = offset.normalized;
