@@ -511,6 +511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstScene: MainMenuTest
+  persistentScene: PersistentGameplay
   objectsToHide: []
 --- !u!4 &1186420028
 Transform:

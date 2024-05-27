@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private string firstScene;
-    //[SerializeField] private string persistentScene;
-    [SerializeField] private GameObject[] objectsToHide;
+    [SerializeField] private string persistentScene;
+    //[SerializeField] private GameObject[] objectsToHide;
     private List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
     // Start is called before the first frame update
     void Start()
@@ -17,20 +17,20 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        HideObjects();
-        //scenesToLoad.Add(SceneManager.LoadSceneAsync(persistentScene));
-        //scenesToLoad.Add(SceneManager.LoadSceneAsync(firstScene, LoadSceneMode.Additive));
-        scenesToLoad.Add(SceneManager.LoadSceneAsync(firstScene));
-        StartCoroutine(LoadSceneAsync());
+        //HideObjects();
+        SceneManager.LoadScene(persistentScene);
+        SceneManager.LoadScene(firstScene, LoadSceneMode.Additive);
+        //scenesToLoad.Add(SceneManager.LoadSceneAsync(firstScene));
+        //StartCoroutine(LoadSceneAsync());
     }
 
-    private void HideObjects()
+    /*private void HideObjects()
     {
         foreach(GameObject obj in objectsToHide)
         {
             obj.SetActive(false);
         }
-    }
+    }*/
 
     private IEnumerator LoadSceneAsync()
     {
