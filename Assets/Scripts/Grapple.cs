@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Grapple : MonoBehaviour
 {
-    [SerializeField] float pullSpeed = 0.5f;
-    [SerializeField] float stopDistance = 4f;
+    [SerializeField] float pullSpeed;
+    [SerializeField] float stopDistance;
+    [SerializeField] public float maxDistance;
     [SerializeField] GameObject hookPrefab;
     [SerializeField] Transform shootTransform;
-    [SerializeField] Transform lookPoint;
+    //[SerializeField] Transform lookPoint;
 
     Hook hook;
     bool pulling;
@@ -36,7 +37,7 @@ public class Grapple : MonoBehaviour
             StopAllCoroutines();
             pulling = false;
             hook = Instantiate(hookPrefab, shootTransform.position, Quaternion.identity).GetComponent<Hook>();
-            hook.Initialize(this, lookPoint);
+            hook.Initialize(this, shootTransform, maxDistance);
             StartCoroutine(DestroyHookAfterLifetime());
         }
         else if(hook != null && wishRelease)
@@ -45,16 +46,21 @@ public class Grapple : MonoBehaviour
         }
         wishHook = false;
         wishRelease = false;
+    }
 
-        if (!pulling || hook == null) return;
+    private void FixedUpdate()
+    {
+        if (hook == null) return;
+        float dist = Vector3.Distance(transform.position, hook.transform.position);
+        Debug.Log("Distance " + dist);
 
-        if(Vector3.Distance(transform.position, hook.transform.position) <= stopDistance)
+        if(pulling && dist >= stopDistance)
+        {
+            rigid.AddForce((hook.transform.position - transform.position).normalized * pullSpeed, ForceMode.Acceleration);
+        }
+        else if (pulling || !pulling && dist >= maxDistance)
         {
             DestroyHook();
-        }
-        else
-        {
-            rigid.AddForce((hook.transform.position - transform.position).normalized * pullSpeed, ForceMode.VelocityChange);
         }
     }
 

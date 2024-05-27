@@ -26,6 +26,7 @@ public class CameraController : MonoBehaviour
         {
             speed *= webGLCo;
         }
+        Cursor.lockState = CursorLockMode.Locked;
         delta = new Vector2(0f, 0f);
         _TF = gameObject.GetComponent<Transform>();
         _LF = _TF.GetChild(0).GetComponent<Transform>();

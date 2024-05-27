@@ -13,8 +13,6 @@ public class LaunchProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        launchHeightFactor = 0.2f;
-        launchVelocity = 1500f;
     }
 
     // Update is called once per frame
@@ -26,7 +24,7 @@ public class LaunchProjectile : MonoBehaviour
     public void Launch()
     {
         GameObject shot = Instantiate(usedItem, launchOrigin.transform.position, launchOrigin.transform.rotation);
-        shot.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, launchVelocity * launchHeightFactor, launchVelocity));
+        shot.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, launchVelocity * launchHeightFactor, launchVelocity), ForceMode.Impulse);
 
         // Use Coroutine to get delay
         StartCoroutine(SetFalse(shot));

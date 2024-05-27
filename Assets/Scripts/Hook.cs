@@ -10,12 +10,23 @@ public class Hook : MonoBehaviour
     Rigidbody rigid;
     LineRenderer lineRenderer;
 
-    public void Initialize(Grapple grapple, Transform shootTransform) {
+    public void Initialize(Grapple grapple, Transform shootTransform, float maxDistance) {
         transform.forward = shootTransform.forward;
         this.grapple = grapple;
         rigid = GetComponent<Rigidbody>();
         lineRenderer = GetComponent<LineRenderer>();
-        rigid.AddForce(transform.forward * HookForce, ForceMode.Impulse);
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, maxDistance, LayerMask.GetMask("Grapple"), QueryTriggerInteraction.Collide))
+        {
+            Debug.Log("I hit something!");
+            transform.position = hit.point;
+            attach();
+        }
+        else
+        {
+            Debug.Log("I did not hit something");
+            rigid.AddForce(transform.forward * HookForce, ForceMode.Impulse);
+        }
     }
 
     // Update is called once per frame
@@ -36,10 +47,15 @@ public class Hook : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if((LayerMask.GetMask("Grapple") & 1 << other.gameObject.layer) > 0) {
-            rigid.useGravity = false;
-            rigid.isKinematic = true;
-
-            grapple.StartPull();
+            attach();
         }
+    }
+
+    private void attach()
+    {
+        rigid.useGravity = false;
+        rigid.isKinematic = true;
+
+        grapple.StartPull();
     }
 }
