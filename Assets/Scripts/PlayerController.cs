@@ -57,6 +57,9 @@ public class PlayerController : Damageable
     //Reset on death
     public ResetController reset;
 
+    //testing hit
+    public RaycastHit hit;
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -106,8 +109,46 @@ public class PlayerController : Damageable
             falling = true;
         }
         //Hover ("Making A Physics Based Character Controller in Unity" by Toyful Games. YouTube)
-        RaycastHit hit;
+        //RaycastHit hit;
         if (Physics.Raycast(_TF.position, _TF.TransformDirection(Vector3.down), out hit, maxDistFromGround))
+        {
+            Debug.DrawRay(_TF.position, _TF.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
+            Vector3 rayDir = _TF.TransformDirection(Vector3.down);
+
+            if (falling)
+            {
+                Vector3 otherVel = Vector3.zero;
+                Rigidbody hitRB = hit.rigidbody;
+                if (hitRB != null)
+                {
+                    otherVel = hitRB.velocity;
+                }
+
+                float rayDirVel = Vector3.Dot(rayDir, vel);
+                float otherDirVel = Vector3.Dot(rayDir, otherVel);
+
+                float relVel = rayDirVel - otherDirVel;
+
+                float x = hit.distance - hoverHeight;
+
+                float springForce = (x * springStr) - (relVel * springDmp);
+
+                _RB.AddForce(rayDir * springForce);
+                //Debug.Log("SF: " + springForce * rayDir);
+                workingMaxFriction = MAX_FRICTION;
+                workingFrictionCoef = friction_coef;
+                grounded = true;
+            }
+        
+            else
+            {
+                Debug.DrawRay(_TF.position, _TF.TransformDirection(Vector3.down) * maxDistFromGround, Color.red);
+                workingMaxFriction = MAX_DRAG;
+                workingFrictionCoef = drag_coef;
+                grounded = false;
+            }
+        }
+        /*if (Physics.Raycast(_TF.position, _TF.TransformDirection(Vector3.down), out hit, maxDistFromGround))
         {
             Debug.DrawRay(_TF.position, _TF.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
             Vector3 rayDir = _TF.TransformDirection(Vector3.down);
@@ -142,7 +183,7 @@ public class PlayerController : Damageable
             workingMaxFriction = MAX_DRAG;
             workingFrictionCoef = drag_coef;
             grounded = false;
-        }
+        }*/
 
         //Jump
         if(grounded && wishJump)
