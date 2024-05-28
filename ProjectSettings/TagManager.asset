@@ -9,7 +9,6 @@ TagManager:
   - PickUp
   - heart
   - BruteEnemy
-  - moving
   layers:
   - Default
   - TransparentFX

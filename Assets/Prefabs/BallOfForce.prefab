@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8887674917067498873}
   m_Layer: 0
   m_Name: BallOfForce
-  m_TagString: Untagged
+  m_TagString: Damager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionForce: 50
   upwardMod: 1
+  _PRB: {fileID: 0}
 --- !u!54 &8887674917067498873
 Rigidbody:
   m_ObjectHideFlags: 0

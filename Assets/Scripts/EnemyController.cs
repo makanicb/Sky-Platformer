@@ -5,12 +5,12 @@ using Unity.VisualScripting;
 using UnityEngine;
 //using static UnityEditor.Progress;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : Damageable
 {
     // Initialize vars
     public GameObject enemy;
     public GameObject player;
-    public int health;
+    //public int health;
     float enemySpeed;
     float minDist;
     float randX;
@@ -30,8 +30,10 @@ public class EnemyController : MonoBehaviour
     Coroutine fleeCoroutine;
     
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
+        base.Start();
+
         Debug.Log("These logs can be commented out in EnemyController.cs");
         health = 3;
         Debug.Log("Starting health: " + health);
@@ -110,37 +112,34 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    // Decrement health and destroy usedItem if it hits enemy
-    void OnTriggerEnter(Collider other)
+    // Change state if hurt
+    public override void damage(int dmg)
     {
-        if (other.gameObject.CompareTag("usedItem"))
+        base.damage(dmg);
+        // Decrement health
+        Debug.Log("Remaining health: " + health);
+
+        // Change state
+        if (state == State.Passive)
         {
-            // Decrement health
-            health--;
-            Debug.Log("Remaining health: " + health);
-
-            // Change state
-            if (state == State.Passive)
-            {
-                state = State.Aggressive;
-            }
-            else if (health == 1)
-            {
-                state = State.Flee;
-                fleeCoroutine = StartCoroutine(FleeTimer(5f));
-            }
-
-            // Since tag is on child of prefab, get parent to access prefab
-            var parentObject = other.transform.parent.gameObject;
-            parentObject.SetActive(false);
-
-            // Destroy enemy if health drops to 0
-            if (health <= 0)
-            {
-                // Debug.Log("You killed the enemy!");
-                enemy.SetActive(false);
-            }
+            state = State.Aggressive;
         }
+        else if (health == 1)
+        {
+            state = State.Flee;
+            fleeCoroutine = StartCoroutine(FleeTimer(5f));
+        }
+
+        // Since tag is on child of prefab, get parent to access prefab
+        /*var parentObject = other.transform.parent.gameObject;
+        parentObject.SetActive(false);*/
+
+        // Destroy enemy if health drops to 0
+        /*if (health <= 0)
+        {
+            // Debug.Log("You killed the enemy!");
+            enemy.SetActive(false);
+        }*/
     }
 
     IEnumerator IdleTimer(float delay)
