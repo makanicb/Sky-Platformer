@@ -110,7 +110,7 @@ public class PlayerController : Damageable
         }
         //Hover ("Making A Physics Based Character Controller in Unity" by Toyful Games. YouTube)
         //RaycastHit hit;
-        if (Physics.Raycast(_TF.position, _TF.TransformDirection(Vector3.down), out hit, maxDistFromGround))
+        /*if (Physics.Raycast(_TF.position, _TF.TransformDirection(Vector3.down), out hit, maxDistFromGround))
         {
             Debug.DrawRay(_TF.position, _TF.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
             Vector3 rayDir = _TF.TransformDirection(Vector3.down);
@@ -147,8 +147,8 @@ public class PlayerController : Damageable
                 workingFrictionCoef = drag_coef;
                 grounded = false;
             }
-        }
-        /*if (Physics.Raycast(_TF.position, _TF.TransformDirection(Vector3.down), out hit, maxDistFromGround))
+        }*/
+        if (Physics.Raycast(_TF.position, _TF.TransformDirection(Vector3.down), out hit, maxDistFromGround))
         {
             Debug.DrawRay(_TF.position, _TF.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
             Vector3 rayDir = _TF.TransformDirection(Vector3.down);
@@ -188,7 +188,7 @@ public class PlayerController : Damageable
             workingMaxFriction = MAX_DRAG;
             workingFrictionCoef = drag_coef;
             grounded = false;
-        }*/
+        }
 
         //Jump
         if(grounded && wishJump)
