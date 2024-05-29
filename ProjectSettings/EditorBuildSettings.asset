@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Makani/AlphaBuild.unity
-    guid: 0f63d68d183b84fc8a40f97d8345c602
+    path: Assets/Scenes/Makani/MainMenu.unity
+    guid: e9145fd5aae3448b4aa92f8452e86926
   m_configObjects: {}

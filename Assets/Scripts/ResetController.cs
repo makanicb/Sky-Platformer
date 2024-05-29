@@ -26,7 +26,17 @@ public class ResetController : MonoBehaviour
             Time.timeScale = this.timeScale;
             Time.fixedDeltaTime = this.fixedDeltaTime;
             Debug.Log("Time Scale = " + Time.timeScale + " Fixed Delta Time = " + Time.fixedDeltaTime);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            List<int> buildIndexes = new List<int>();
+            for(int i = 0; i < SceneManager.sceneCount; i++)
+            {
+                buildIndexes.Add(SceneManager.GetSceneAt(i).buildIndex);
+                Debug.Log(SceneManager.GetSceneAt(i).name);
+            }
+            SceneManager.LoadScene(buildIndexes[0]);
+            for(int i = 1; i < buildIndexes.Count; i++)
+            {
+                SceneManager.LoadScene(buildIndexes[i], LoadSceneMode.Additive);
+            }
         }
     }
 
