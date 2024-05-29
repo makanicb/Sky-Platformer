@@ -154,6 +154,7 @@ public class PlayerController : Damageable
             Vector3 rayDir = _TF.TransformDirection(Vector3.down);
             if (falling)
             {
+                hit.transform.gameObject.SendMessage("OnTriggerEnter", this.gameObject.GetComponent<Collider>(), SendMessageOptions.DontRequireReceiver);
                 Vector3 otherVel = Vector3.zero;
                 Rigidbody hitRB = hit.rigidbody;
                 if (hitRB != null)
@@ -171,6 +172,10 @@ public class PlayerController : Damageable
                 float springForce = (x * springStr) - (relVel * springDmp);
 
                 _RB.AddForce(rayDir * springForce);
+                if(hitRB != null)
+                {
+                    hitRB.AddForceAtPosition(rayDir * -springForce, hit.point);
+                }
                 //Debug.Log("SF: " + springForce * rayDir);
                 workingMaxFriction = MAX_FRICTION;
                 workingFrictionCoef = friction_coef;
