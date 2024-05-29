@@ -300,6 +300,11 @@ public class PlayerController : Damageable
         }*/
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        falling = true;
+    }
+
     void OnUse()
     {
         // F to use item
