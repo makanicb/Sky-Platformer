@@ -510,9 +510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 273c827ce9c10443389a2c4ee90da35e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstScene: MainMenuTest
+  firstScene: Zeta
   persistentScene: PersistentGameplay
-  objectsToHide: []
 --- !u!4 &1186420028
 Transform:
   m_ObjectHideFlags: 0
