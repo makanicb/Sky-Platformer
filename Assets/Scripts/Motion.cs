@@ -19,10 +19,10 @@ public class MoveBackAndForth : MonoBehaviour
     void Update()
     {
         // Calculate the movement based on the direction, distance, and speed
-        float movement = Mathf.PingPong(Time.time * speed, distance);
+        float movement = Mathf.PingPong(Time.time * speed, distance) - (distance / 2);
 
         // Calculate the position offset based on the movement and direction
-        Vector3 offset = direction * movement;
+        Vector3 offset = direction.normalized * movement;
 
         // Update object's position
         transform.position = startPosition + offset;

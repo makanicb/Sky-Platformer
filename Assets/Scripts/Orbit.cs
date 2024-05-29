@@ -7,6 +7,7 @@ public class Orbit : MonoBehaviour
     public Transform orbitCenter; // The center around which the object will orbit
     public float orbitSpeed = 1f; // Speed of the orbit
     public float orbitRadius = 2f; // Radius of the orbit
+    public bool clockwise = true; // Direction of the orbit
 
     private void Update()
     {
@@ -25,8 +26,8 @@ public class Orbit : MonoBehaviour
 
     private Vector3 CalculateOrbitPosition()
     {
-        // Calculate the angle based on time and orbit speed
-        float angle = Time.time * orbitSpeed;
+        // Calculate the angle based on time, orbit speed, and direction
+        float angle = Time.time * orbitSpeed * (clockwise ? 1 : -1);
 
         // Calculate the position in the orbit using trigonometry
         float x = orbitCenter.position.x + Mathf.Cos(angle) * orbitRadius;
