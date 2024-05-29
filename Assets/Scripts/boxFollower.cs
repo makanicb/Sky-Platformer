@@ -15,15 +15,6 @@ public class MonkeyFollowBox : MonoBehaviour
             // Calculate the initial offset between the monkey head and the box
             initialOffset = transform.position - box.position;
 
-            // Attach the OnDestroyHandler script to the box if it doesn't exist
-            OnDestroyHandler onDestroyHandler = box.gameObject.GetComponent<OnDestroyHandler>();
-            if (onDestroyHandler == null)
-            {
-                onDestroyHandler = box.gameObject.AddComponent<OnDestroyHandler>();
-            }
-
-            // Subscribe to the OnDestroyed event
-            onDestroyHandler.OnDestroyed += HandleBoxDestroyed;
         }
         else
         {
@@ -40,9 +31,5 @@ public class MonkeyFollowBox : MonoBehaviour
         }
     }
 
-    void HandleBoxDestroyed()
-    {
-        // Destroy the monkey when the box is destroyed
-        Destroy(gameObject);
-    }
+    
 }

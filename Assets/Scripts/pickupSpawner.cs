@@ -9,41 +9,18 @@ public class ObjectSpawner : MonoBehaviour
     public float minSpawnInterval = 2f; // Minimum time between spawns
     public float maxSpawnInterval = 5f; // Maximum time between spawns
     public Collider islandBounds; // Assign the island's collider in the Inspector
-    public Transform player; // Reference to the player
 
-    private float spawnHeightOffset = 1.524f; // 5 feet in meters
-    private bool playerInBounds = false;
+    private float spawnHeightOffset = 5; // 5 units up
 
     void Start()
     {
-        // Ensure the islandBounds collider is a trigger
-        if (islandBounds != null && !islandBounds.isTrigger)
-        {
-            islandBounds.isTrigger = true;
-        }
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.transform == player)
-        {
-            playerInBounds = true;
-            StartCoroutine(SpawnObjects());
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.transform == player)
-        {
-            playerInBounds = false;
-            StopCoroutine(SpawnObjects());
-        }
+        // Start the object spawning coroutine regardless of player position
+        StartCoroutine(SpawnObjects());
     }
 
     IEnumerator SpawnObjects()
     {
-        while (playerInBounds)
+        while (true)
         {
             SpawnObject();
             float spawnInterval = Random.Range(minSpawnInterval, maxSpawnInterval);

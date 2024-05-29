@@ -504,7 +504,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2117693777}
     - target: {fileID: 7477142032069606379, guid: 8e093d9a0c2392744b4c88624e42e28c,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -746,7 +746,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -4189,6 +4189,12 @@ PrefabInstance:
 --- !u!1 &2117693768 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8400283359846811948, guid: c44498a3b2b2643428c0dedcb7e7364e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1269175721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2117693777 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8451831793227306554, guid: c44498a3b2b2643428c0dedcb7e7364e,
     type: 3}
   m_PrefabInstance: {fileID: 1269175721}
   m_PrefabAsset: {fileID: 0}
