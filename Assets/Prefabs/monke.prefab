@@ -70,15 +70,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2dbbb31a967795f4785b30271cd98e0a,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1785577382358080633}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2dbbb31a967795f4785b30271cd98e0a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7742660755336409403}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2dbbb31a967795f4785b30271cd98e0a,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7450126587769892137}
+      addedObject: {fileID: -3443375977603560174}
   m_SourcePrefab: {fileID: 100100000, guid: 2dbbb31a967795f4785b30271cd98e0a, type: 3}
 --- !u!1 &5139182690045729101 stripped
 GameObject:
@@ -86,7 +78,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5445804935894410268}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1785577382358080633
+--- !u!114 &-3443375977603560174
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,58 +87,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5139182690045729101}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3adf9b8c5547f24d99ff2d3134b12b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 5564f3f4d022a7642af5f929797947d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  maxHealth: 3
-  enemy: {fileID: 0}
-  player: {fileID: 0}
---- !u!54 &7742660755336409403
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5139182690045729101}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &7450126587769892137
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5139182690045729101}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.02734375, y: 0.017031247, z: 0.019687496}
-  m_Center: {x: 0, y: 0, z: 0}
+  box: {fileID: 0}
