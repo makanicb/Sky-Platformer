@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 4404647394103739916}
   - component: {fileID: 2565086941559913190}
   - component: {fileID: 2942309483713194528}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: columnalPlat
   m_TagString: Untagged
   m_Icon: {fileID: 0}

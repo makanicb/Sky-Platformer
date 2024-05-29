@@ -791,6 +791,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1924603606}
     m_Modifications:
+    - target: {fileID: 100607938175962296, guid: ce7a7c7db7628644098ad73a0d930fca,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7105599470070042377, guid: ce7a7c7db7628644098ad73a0d930fca,
         type: 3}
       propertyPath: m_Name
@@ -8543,6 +8548,11 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 1446958596}
+    - target: {fileID: 6671535267001897567, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: maxCameraDist
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6817930318609267936, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
       propertyPath: m_Name
