@@ -269,6 +269,14 @@ public class PlayerController : Damageable
         Vector3 friction = Vector3.ClampMagnitude(driftVel * workingFrictionCoef, workingMaxFriction);
         //Debug.Log("friction = " + friction);
         _RB.AddForce(friction, ForceMode.Acceleration);
+
+        // Death Plane
+        if (transform.position.y < -500f)
+        {
+            // Reset Scene
+            // Once checkpoints are implemented, reset to checkpoint
+            onDeath();
+        }
     }
 
     void OnMove(InputValue moveValue)
