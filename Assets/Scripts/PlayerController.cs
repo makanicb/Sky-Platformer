@@ -355,4 +355,9 @@ public class PlayerController : Damageable
         reset.ResetScene();
     }
 
+    public int getDashes()
+    {
+        return dashes;
+    }
+
 }
