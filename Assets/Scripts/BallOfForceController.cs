@@ -9,6 +9,7 @@ public class BallOfForceController : DamageField
     private Transform _TF;
     public Rigidbody _PRB;
     private float explosionRadius;
+    [SerializeField] private List<string> Protect;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +29,7 @@ public class BallOfForceController : DamageField
         //Debug.Log("EXPLOSION");
         Rigidbody rb = other.attachedRigidbody;
         Transform tf = other.transform;
-        if (rb != null && !_TF.IsChildOf(tf.parent))
+        if (rb != null && !_TF.IsChildOf(tf.parent) && Protect.Contains(other.tag))
         {
             Vector3 offset = tf.position - _TF.position;
             Vector3 dir = offset.normalized;
