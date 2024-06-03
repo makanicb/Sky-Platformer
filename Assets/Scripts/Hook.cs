@@ -20,7 +20,7 @@ public class Hook : MonoBehaviour
         {
             Debug.Log("I hit something!");
             transform.position = hit.point;
-            attach();
+            attach(hit.collider.transform);
         }
         else
         {
@@ -47,12 +47,13 @@ public class Hook : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if((LayerMask.GetMask("Grapple") & 1 << other.gameObject.layer) > 0) {
-            attach();
+            attach(other.transform);
         }
     }
 
-    private void attach()
+    private void attach(Transform other)
     {
+        transform.SetParent(other, true);
         rigid.useGravity = false;
         rigid.isKinematic = true;
 

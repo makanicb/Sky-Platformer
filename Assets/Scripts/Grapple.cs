@@ -30,8 +30,6 @@ public class Grapple : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         if(hook == null && wishHook)
         {
             StopAllCoroutines();
@@ -52,7 +50,7 @@ public class Grapple : MonoBehaviour
     {
         if (hook == null) return;
         float dist = Vector3.Distance(transform.position, hook.transform.position);
-        Debug.Log("Distance " + dist);
+        //Debug.Log("Distance " + dist);
 
         if(pulling && dist >= stopDistance)
         {
