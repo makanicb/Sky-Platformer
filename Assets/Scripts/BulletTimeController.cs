@@ -67,4 +67,9 @@ public class BulletTimeController : MonoBehaviour
             rate = chargeRate;
         }
     }
+
+    public float getRemainingDuration()
+    {
+        return rDuration;
+    }
 }
