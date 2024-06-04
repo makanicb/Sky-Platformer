@@ -65,6 +65,9 @@ public class PlayerController : Damageable
     //testing hit
     public RaycastHit hit;
 
+    // Checkpoints
+    public int checkpoint;
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -95,6 +98,9 @@ public class PlayerController : Damageable
         reference = new GameObject("Reference", typeof(Transform));
         prevPosition = reference.transform.position;
         firstContact = true;
+
+        // Checkpoints
+        checkpoint = 0;
     }
 
     // Update is called once per frame
@@ -277,6 +283,38 @@ public class PlayerController : Damageable
             // Once checkpoints are implemented, reset to checkpoint
             onDeath();
         }
+
+        // Update Checkpoints
+        switch (checkpoint)
+        {
+            case 3:
+                break;
+
+            case 2:
+                if (transform.position.y > 1425f)
+                {
+                    checkpoint = 3;
+                }
+                break;
+
+            case 1:
+                if (transform.position.y > 1111f)
+                {
+                    checkpoint = 2;
+                }
+                break;
+
+            case 0:
+                if (transform.position.y > 763f)
+                {
+                    checkpoint = 1;
+                }
+                break;
+
+            default:
+                Debug.Log("You broke the checkpoints, congratulations");
+                break;
+        }
     }
 
     void OnMove(InputValue moveValue)
@@ -352,7 +390,32 @@ public class PlayerController : Damageable
 
     protected override void onDeath()
     {
-        reset.ResetScene();
+        // Return to checkpoint
+        switch (checkpoint)
+        {
+            case 3:
+                transform.position = new Vector3(580f, 1430f, 380f);
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
+                break;
+
+            case 2:
+                transform.position = new Vector3(1930f, 1115f, -25f);
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
+                break;
+
+            case 1:
+                transform.position = new Vector3(-280f, 765f, 285f);
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
+                break;
+
+            case 0:
+                reset.ResetScene();
+                break;
+
+            default:
+                Debug.Log("You broke the checkpoints, congratulations");
+                break;
+        }
     }
 
     public int getDashes()
