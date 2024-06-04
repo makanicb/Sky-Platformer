@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 4027754544968991956}
   - component: {fileID: 3695120637451081707}
   - component: {fileID: 5441900403215094059}
+  - component: {fileID: 8900851633944703035}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -190,7 +191,6 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 2
 --- !u!114 &5211991662138631209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +282,24 @@ MonoBehaviour:
   hookPrefab: {fileID: 8020663140112745568, guid: 39adfca6459fa964b95a6a46541383e6,
     type: 3}
   shootTransform: {fileID: 2218896646842283711}
+--- !u!114 &8900851633944703035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2297035529213927335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f56f8bd766cdd4443acb031fe6262704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skyboxMaterialAtHeight1: {fileID: 2100000, guid: e2341a9d03e86ec4290c72b1e22bbc7c,
+    type: 2}
+  skyboxMaterialAtHeight2: {fileID: 2100000, guid: 369b9ebe3a62b904dbc19bd332b44086,
+    type: 2}
+  height1: 1110
+  height2: 1450
 --- !u!1 &3456826250764237163
 GameObject:
   m_ObjectHideFlags: 0

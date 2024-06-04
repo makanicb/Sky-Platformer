@@ -8,9 +8,8 @@ public class CoLERP : MonoBehaviour
 
     public float maxDistance = 7f;
     public Color endColor = Color.red;
-    public Color startColor = Color.white;
+    private Color startColor;
     private SkinnedMeshRenderer meshRenderer;
-
 
     // Start is called before the first frame update
     void Start()
@@ -18,18 +17,21 @@ public class CoLERP : MonoBehaviour
         GameObject player = GameObject.FindWithTag("Player");
         pill = player.transform;
         meshRenderer = GetComponent<SkinnedMeshRenderer>();
+        
+        // Initialize startColor with the current color of the material
+        startColor = meshRenderer.material.color;
     }
 
     // Update is called once per frame
     void Update()
     {
-      //calculate distance between ghost and player
+        // Calculate distance between ghost and player
         float distanceToPill = Vector3.Distance(transform.position, pill.position);
 
-        //calculate lerp parameter based on distance
+        // Calculate lerp parameter based on distance
         float t = Mathf.Clamp01(distanceToPill / maxDistance);
 
-        //lerp color
+        // Lerp color
         Color lerpedColor = Color.Lerp(startColor, endColor, t);
 
         meshRenderer.material.color = lerpedColor;

@@ -266,8 +266,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2297035529213927335, guid: 08c1c0def15db411dbca965dc02945df,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5128393387032609873}
   m_SourcePrefab: {fileID: 100100000, guid: 08c1c0def15db411dbca965dc02945df, type: 3}
+--- !u!1 &8400283359846811948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2297035529213927335, guid: 08c1c0def15db411dbca965dc02945df,
+    type: 3}
+  m_PrefabInstance: {fileID: 7742664749878613643}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5128393387032609873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400283359846811948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f56f8bd766cdd4443acb031fe6262704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skyboxMaterialAtHeight1: {fileID: 2100000, guid: e2341a9d03e86ec4290c72b1e22bbc7c,
+    type: 2}
+  skyboxMaterialAtHeight2: {fileID: 2100000, guid: 369b9ebe3a62b904dbc19bd332b44086,
+    type: 2}
+  height1: 2220
+  height2: 3000
 --- !u!4 &8451831793227306554 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2177922172358394033, guid: 08c1c0def15db411dbca965dc02945df,
