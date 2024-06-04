@@ -19,6 +19,11 @@ public class destroyer : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        // Check if the object has the "Player" tag
+        if (other.CompareTag("Player"))
+        {
+            return;
+        }
         // Start the destruction process for the detected object
         StartCoroutine(DestroyObjectAfterInterval(other.gameObject));
     }

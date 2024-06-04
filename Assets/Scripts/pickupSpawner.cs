@@ -10,7 +10,7 @@ public class ObjectSpawner : MonoBehaviour
     public float maxSpawnInterval = 5f; // Maximum time between spawns
     public Collider islandBounds; // Assign the island's collider in the Inspector
 
-    private float spawnHeightOffset = 5; // 5 units up
+    public float spawnHeightOffset = 5; // 5 units up
 
     void Start()
     {
