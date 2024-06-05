@@ -7,15 +7,21 @@ public class Health : MonoBehaviour
 {
     public int health;
     public int maxPlayerHealth;
+    private Damageable player;
 
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
+    void Start()
+    {
+        player = gameObject.GetComponent<Damageable>();
+    }
+
     void Update() {
 
-        health = gameObject.GetComponent<PlayerController>().getHealth(); //QUICK FIX TO MAKE HEALTH WORK FOR ALPHA BUILD
-                                                                           //TO-DO: REPLACE FUNCTIONALITY WITH OBSERVER
+        health = player.getHealth(); //QUICK FIX TO MAKE HEALTH WORK FOR ALPHA BUILD
+        maxPlayerHealth = player.getMaxHealth(); //TO-DO: REPLACE FUNCTIONALITY WITH OBSERVER
 
         if (health > maxPlayerHealth) {
             health = maxPlayerHealth;
