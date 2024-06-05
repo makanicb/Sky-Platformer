@@ -35,7 +35,7 @@ public class EnemyController : Damageable
         base.Start();
 
         Debug.Log("These logs can be commented out in EnemyController.cs");
-        health = 3;
+        //health = 3;
         Debug.Log("Starting health: " + health);
 
         player = GameObject.Find("PlayerManager/Player");
