@@ -95,10 +95,6 @@ public class PlayerController : Damageable
         heldItem = GameObject.Find("Player/heldItem");
         heldItem.SetActive(false);
 
-        reference = new GameObject("Reference");
-        prevPosition = reference.transform.position;
-        firstContact = true;
-
         // Checkpoints
         checkpoint = 0;
     }
@@ -114,9 +110,19 @@ public class PlayerController : Damageable
         //Debug.Log(falling);
         Vector3 vel = _RB.velocity;
         Vector3 otherVel = Vector3.zero;
-        Vector3 groundVel = ((reference.transform.position - prevPosition) / Time.fixedDeltaTime);
-        //print("Reference velocity: " + groundVel);
-        prevPosition = reference.transform.position;
+        Vector3 groundVel = Vector3.zero;
+        if (reference != null)
+        {
+            groundVel = ((reference.transform.position - prevPosition) / Time.fixedDeltaTime);
+            //print("Reference velocity: " + groundVel);
+            prevPosition = reference.transform.position;
+        }
+        else //re instantiate reference if it is destroyed
+        {
+            reference = new GameObject("Reference");
+            prevPosition = reference.transform.position;
+            firstContact = true;
+        }
 
         //Charging?
         //Debug.Log(vel.magnitude + ">=" + chargeThreshold);
