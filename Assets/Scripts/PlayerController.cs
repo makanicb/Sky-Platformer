@@ -95,7 +95,7 @@ public class PlayerController : Damageable
         heldItem = GameObject.Find("Player/heldItem");
         heldItem.SetActive(false);
 
-        reference = new GameObject("Reference", typeof(Transform));
+        reference = new GameObject("Reference");
         prevPosition = reference.transform.position;
         firstContact = true;
 
