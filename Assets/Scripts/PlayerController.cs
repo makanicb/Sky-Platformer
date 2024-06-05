@@ -167,7 +167,7 @@ public class PlayerController : Damageable
                 grounded = false;
             }
         }*/
-        if (Physics.SphereCast(_TF.position, gameObject.GetComponent<CapsuleCollider>().radius, _TF.TransformDirection(Vector3.down), out hit, maxDistFromGround))
+        if (Physics.SphereCast(_TF.position, gameObject.GetComponent<CapsuleCollider>().radius, _TF.TransformDirection(Vector3.down), out hit, maxDistFromGround, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
         {
             Debug.DrawRay(_TF.position, _TF.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
             Vector3 rayDir = _TF.TransformDirection(Vector3.down);
@@ -416,6 +416,7 @@ public class PlayerController : Damageable
                 Debug.Log("You broke the checkpoints, congratulations");
                 break;
         }
+        setHealth(getMaxHealth());
     }
 
     public int getDashes()
