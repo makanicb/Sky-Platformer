@@ -13,7 +13,8 @@ public class projectileShooter : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindWithTag("Player").transform;
+        player = GameObject.Find("Player").transform;
+        Debug.Log("Getting player transform:" + player);
         shootTimer = shootInterval;
     }
 
