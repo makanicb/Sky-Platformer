@@ -592,6 +592,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 302974093}
     m_Modifications:
+    - target: {fileID: 5198542589557883086, guid: 8e093d9a0c2392744b4c88624e42e28c,
+        type: 3}
+      propertyPath: m_TagString
+      value: genericEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6010528371929788318, guid: 8e093d9a0c2392744b4c88624e42e28c,
         type: 3}
       propertyPath: player
