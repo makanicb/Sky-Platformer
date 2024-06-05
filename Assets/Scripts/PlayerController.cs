@@ -183,8 +183,7 @@ public class PlayerController : Damageable
                     reference.transform.SetParent(hit.collider.transform, true);
                     firstContact = false;
                 }
-                
-                
+                                
                 Rigidbody hitRB = hit.rigidbody;
                 if (hitRB != null)
                 {
