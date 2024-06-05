@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0008095366, g: 0.004161895, b: 0.020063972, a: 1}
+  m_IndirectSpecularColor: {r: 0.00077650597, g: 0.0040908274, b: 0.020099903, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1643,6 +1643,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6817930318609267936, guid: c44498a3b2b2643428c0dedcb7e7364e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8814170164244648714, guid: c44498a3b2b2643428c0dedcb7e7364e,
         type: 3}
@@ -3318,7 +3323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1301732258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3381,7 +3386,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3604,7 +3609,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1502584541
 MonoBehaviour:
   m_ObjectHideFlags: 0
