@@ -167,6 +167,8 @@ public class PlayerController : Damageable
                 grounded = false;
             }
         }*/
+        if (Physics.SphereCast(_TF.position, gameObject.GetComponent<CapsuleCollider>().radius, _TF.TransformDirection(Vector3.down), out hit, maxDistFromGround))
+            hit.transform.gameObject.SendMessage("OnTriggerEnter", this.gameObject.GetComponent<Collider>(), SendMessageOptions.DontRequireReceiver);
         if (Physics.SphereCast(_TF.position, gameObject.GetComponent<CapsuleCollider>().radius, _TF.TransformDirection(Vector3.down), out hit, maxDistFromGround, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
         {
             Debug.DrawRay(_TF.position, _TF.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
@@ -182,7 +184,7 @@ public class PlayerController : Damageable
                     firstContact = false;
                 }
                 
-                hit.transform.gameObject.SendMessage("OnTriggerEnter", this.gameObject.GetComponent<Collider>(), SendMessageOptions.DontRequireReceiver);
+                
                 Rigidbody hitRB = hit.rigidbody;
                 if (hitRB != null)
                 {
