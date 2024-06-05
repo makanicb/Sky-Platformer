@@ -9086,19 +9086,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -555230840544040826, guid: d37eb006916c48247988fdc1030dbd21,
         type: 3}
-      propertyPath: health
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -555230840544040826, guid: d37eb006916c48247988fdc1030dbd21,
-        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1450995943}
-    - target: {fileID: -555230840544040826, guid: d37eb006916c48247988fdc1030dbd21,
-        type: 3}
-      propertyPath: maxHealth
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5011889716810104942, guid: d37eb006916c48247988fdc1030dbd21,
         type: 3}
       propertyPath: m_Enabled
