@@ -115,7 +115,7 @@ public class PlayerController : Damageable
         Vector3 vel = _RB.velocity;
         Vector3 otherVel = Vector3.zero;
         Vector3 groundVel = ((reference.transform.position - prevPosition) / Time.fixedDeltaTime);
-        print("Reference velocity: " + groundVel);
+        //print("Reference velocity: " + groundVel);
         prevPosition = reference.transform.position;
 
         //Charging?
