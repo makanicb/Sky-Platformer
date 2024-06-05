@@ -90,6 +90,18 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8476537892529922708}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 241cb4d27311b8f488c68e9765755bed,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7768637636983879785}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 241cb4d27311b8f488c68e9765755bed,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4429875413628755083}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 241cb4d27311b8f488c68e9765755bed,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -9106994867924533865}
   m_SourcePrefab: {fileID: 100100000, guid: 241cb4d27311b8f488c68e9765755bed, type: 3}
 --- !u!1 &5392982630957032019 stripped
 GameObject:
@@ -138,3 +150,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spinSpeed: 30
   direction: up
+--- !u!114 &-7768637636983879785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392982630957032019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e62144af1f5711146990d261362fe4f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthIncreaseAmount: 1
+--- !u!114 &4429875413628755083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392982630957032019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51689d7de557f4f3280dad35ab7bdbd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: -1
+  targets:
+  - 
+--- !u!136 &-9106994867924533865
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392982630957032019}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
