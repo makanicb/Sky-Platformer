@@ -7,6 +7,12 @@ public class SceneLoader : MonoBehaviour
 {
     [SerializeField] private List<string> scenesToLoad;
     [SerializeField] private List<string> scenesToUnload;
+    private bool loaded;
+
+    private void Start()
+    {
+        loaded = false;
+    }
 
     public void LoadScenes()
     {
@@ -30,7 +36,10 @@ public class SceneLoader : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !loaded)
+        {
+            loaded = true;
             LoadScenes();
+        }
     }
 }
