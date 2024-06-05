@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   targets:
-  - 
+  - Player
 --- !u!114 &-3823920801612563839
 MonoBehaviour:
   m_ObjectHideFlags: 0
