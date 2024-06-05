@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Makani/MainMenu.unity
-    guid: e9145fd5aae3448b4aa92f8452e86926
+    path: Assets/Scenes/Final Build/MainMenu.unity
+    guid: 97105c69a37ed4c5e9dc7dcf81d68cb5
+  - enabled: 1
+    path: Assets/Scenes/Final Build/PersistentGameplay.unity
+    guid: ebec379c6ee714403bfe155b38daa77b
+  - enabled: 1
+    path: Assets/Scenes/Final Build/Zeta.unity
+    guid: d401349b9bdce41be9cee7f5963c8470
+  - enabled: 1
+    path: Assets/Scenes/Final Build/CloudyIsland.unity
+    guid: 33cec4ead1e8b469298a856a97c1e3a6
+  - enabled: 1
+    path: Assets/Scenes/Final Build/Space Scene.unity
+    guid: 32f4d10fe099b41b5b66b7c7e31462b6
   m_configObjects: {}
