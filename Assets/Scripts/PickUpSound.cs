@@ -28,10 +28,15 @@ public class PickUpSound : MonoBehaviour
     {
         pickup.SetActive(true);
     }
-/*
+
     void drop()
     {
         pickup.SetActive(false);
     }
-    */
+
+    void OnUse()
+    {
+        drop();
+    }
+    
 }
